@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d3erudp7aqkpk"]
 
 [ext_resource type="PackedScene" uid="uid://dbhm1foiyme4l" path="res://scenes/player.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://do0jluss244jf" path="res://scenes/possessable_object.tscn" id="2_0wfyh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nht5g"]
 size = Vector2(320, 3)
@@ -47,6 +48,11 @@ collision_layer = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WallRight" unique_id=110570560]
 position = Vector2(1.5, 90)
 shape = SubResource("RectangleShape2D_oj040")
+
+[node name="Objects" type="Node2D" parent="." unique_id=1533293668]
+
+[node name="PossessableObject" parent="Objects" unique_id=516272827 instance=ExtResource("2_0wfyh")]
+position = Vector2(144, 50)
 
 [node name="Entities" type="Node2D" parent="." unique_id=1910410418]
 
