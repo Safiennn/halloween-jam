@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://d3erudp7aqkpk"]
+
+[ext_resource type="PackedScene" uid="uid://dbhm1foiyme4l" path="res://scenes/player.tscn" id="1_o5qli"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nht5g"]
+size = Vector2(320, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o5qli"]
+size = Vector2(320, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0wfyh"]
+size = Vector2(3, 180)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oj040"]
+size = Vector2(3, 180)
+
+[node name="Main" type="Node2D" unique_id=1780577006]
+
+[node name="Walls" type="Node2D" parent="." unique_id=680885614]
+
+[node name="WallTop" type="StaticBody2D" parent="Walls" unique_id=159356256]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WallTop" unique_id=278529540]
+position = Vector2(160, -1.5)
+shape = SubResource("RectangleShape2D_nht5g")
+
+[node name="WallBottom" type="StaticBody2D" parent="Walls" unique_id=109061309]
+position = Vector2(0, 180)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WallBottom" unique_id=766563695]
+position = Vector2(160, 1.5)
+shape = SubResource("RectangleShape2D_o5qli")
+
+[node name="WallLeft" type="StaticBody2D" parent="Walls" unique_id=782837748]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WallLeft" unique_id=1526172665]
+position = Vector2(-1.5, 90)
+shape = SubResource("RectangleShape2D_0wfyh")
+
+[node name="WallRight" type="StaticBody2D" parent="Walls" unique_id=1770123177]
+position = Vector2(320, 0)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WallRight" unique_id=110570560]
+position = Vector2(1.5, 90)
+shape = SubResource("RectangleShape2D_oj040")
+
+[node name="Entities" type="Node2D" parent="." unique_id=1910410418]
+
+[node name="Player" parent="Entities" unique_id=1373740912 instance=ExtResource("1_o5qli")]
+position = Vector2(73, 45)
