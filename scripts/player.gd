@@ -34,12 +34,14 @@ func _possession():
 	is_possessing = true
 	velocity = Vector2.ZERO
 	possessed_object = nearby_object
+	nearby_object.set_color()
 
 # Show player and set players position to the possessed_object's position.
 func _leave_possesion():
 	visible = true
 	is_possessing = false
 	global_position = possessed_object.global_position
+	possessed_object.clear_color()
 
 func set_nearby_object(object):
 	nearby_object = object

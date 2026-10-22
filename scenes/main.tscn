@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dbhm1foiyme4l" path="res://scenes/player.tscn" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://do0jluss244jf" path="res://scenes/possessable_object.tscn" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://n75hajcnwuew" path="res://scenes/hunter.tscn" id="3_sugp2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nht5g"]
 size = Vector2(320, 3)
@@ -58,3 +59,20 @@ position = Vector2(144, 50)
 
 [node name="Player" parent="Entities" unique_id=1373740912 instance=ExtResource("1_o5qli")]
 position = Vector2(73, 45)
+
+[node name="Hunter" parent="Entities" unique_id=1514925568 node_paths=PackedStringArray("markers") instance=ExtResource("3_sugp2")]
+position = Vector2(62, 125)
+markers = [NodePath("../../HunterRoutes/Hunter1/Marker2D"), NodePath("../../HunterRoutes/Hunter1/Marker2D2"), NodePath("../../HunterRoutes/Hunter1/Marker2D3")]
+
+[node name="HunterRoutes" type="Node2D" parent="." unique_id=278516046]
+
+[node name="Hunter1" type="Node2D" parent="HunterRoutes" unique_id=2082713529]
+
+[node name="Marker2D" type="Marker2D" parent="HunterRoutes/Hunter1" unique_id=1237460088]
+position = Vector2(61, 147)
+
+[node name="Marker2D2" type="Marker2D" parent="HunterRoutes/Hunter1" unique_id=616329793]
+position = Vector2(132, 141)
+
+[node name="Marker2D3" type="Marker2D" parent="HunterRoutes/Hunter1" unique_id=504052323]
+position = Vector2(100, 123)
