@@ -16,8 +16,14 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 		body.clear_nearby_object()
 		$Label.hide()
 
+
 func set_color():
 	$Sprite2D.modulate = Color(0.0, 0.902, 1.0, 1.0)
 
 func clear_color():
 	$Sprite2D.modulate = Color(1.0, 1.0, 1.0, 1.0)
+
+func make_noise():
+	var hunters = $NoiseRange.get_overlapping_bodies()
+	for hunter in hunters:
+		hunter.get_scared()

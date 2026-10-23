@@ -26,6 +26,9 @@ func _physics_process(delta: float) -> void:
 	if not is_possessing:
 		get_input(delta)
 		move_and_slide()
+	
+	if Input.is_action_just_pressed("make_noise") and is_possessing:
+		possessed_object.make_noise()
 
 # Hide the player and set velocity to 0 so the player doesn't drift off when leaving.
 # Save nearby object into possessed_object variable so leaving still works even if nearby_object changes while inside.
@@ -33,6 +36,7 @@ func _possession():
 	visible = false
 	is_possessing = true
 	velocity = Vector2.ZERO
+	$CollisionShape2D.disabled = true
 	possessed_object = nearby_object
 	nearby_object.set_color()
 
@@ -40,6 +44,7 @@ func _possession():
 func _leave_possesion():
 	visible = true
 	is_possessing = false
+	$CollisionShape2D.disabled = false
 	global_position = possessed_object.global_position
 	possessed_object.clear_color()
 

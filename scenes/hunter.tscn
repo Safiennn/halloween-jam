@@ -7,6 +7,9 @@
 radius = 6.0
 height = 18.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_nht5g"]
+radius = 27.0
+
 [node name="Hunter" type="CharacterBody2D" unique_id=1514925568]
 collision_layer = 4
 collision_mask = 2
@@ -19,3 +22,10 @@ shape = SubResource("CapsuleShape2D_oj040")
 modulate = Color(1, 0, 0, 1)
 scale = Vector2(0.078125, 0.125)
 texture = ExtResource("1_660ry")
+
+[node name="DetectionRange" type="Area2D" parent="." unique_id=768933311]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionRange" unique_id=293852197]
+shape = SubResource("CircleShape2D_nht5g")
+
+[connection signal="body_entered" from="DetectionRange" to="." method="_on_detection_range_body_entered"]
