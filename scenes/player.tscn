@@ -1,11 +1,23 @@
 [gd_scene format=3 uid="uid://dbhm1foiyme4l"]
 
-[ext_resource type="Texture2D" uid="uid://dnv4pw67yumfc" path="res://assets/graphics/icon.svg" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://c31l5rvgqm0hh" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://blb85dpt8lvan" path="res://assets/graphics/player.png" id="2_g2els"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nht5g"]
-radius = 4.0
-height = 16.0
+radius = 5.0
+height = 14.0
+
+[sub_resource type="Gradient" id="Gradient_g2els"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.5618557, 1)
+colors = PackedColorArray(0.84313726, 1, 1, 1, 0.8745098, 1, 1, 0.34509805, 0.83137256, 0.9254902, 0.9764706, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dqkch"]
+gradient = SubResource("Gradient_g2els")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
 
 [node name="Player" type="CharacterBody2D" unique_id=1373740912 groups=["player"]]
 collision_mask = 2
@@ -15,6 +27,11 @@ script = ExtResource("1_g2els")
 shape = SubResource("CapsuleShape2D_nht5g")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1960374859]
-position = Vector2(0, 3.8146973e-06)
-scale = Vector2(0.054687504, 0.12499999)
-texture = ExtResource("1_3vyb7")
+texture = ExtResource("2_g2els")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=55627433]
+texture_filter = 2
+energy = 0.2
+shadow_enabled = true
+shadow_filter = 1
+texture = SubResource("GradientTexture2D_dqkch")

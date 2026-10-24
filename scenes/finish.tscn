@@ -4,12 +4,13 @@
 [ext_resource type="Script" uid="uid://mlca6pd2rh4o" path="res://scripts/finish.gd" id="1_07gpw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_07gpw"]
-size = Vector2(18, 38)
+size = Vector2(38, 42)
 
 [node name="Finish" type="Node2D" unique_id=1692256549]
 script = ExtResource("1_07gpw")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=20643200]
+visible = false
 scale = Vector2(0.140625, 0.296875)
 texture = ExtResource("1_5nbog")
 

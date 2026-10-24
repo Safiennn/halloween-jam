@@ -10,17 +10,17 @@ config_version=5
 
 [application]
 
-config/name="Halloween Jam"
+config/name="Spook"
 run/main_scene="uid://d3erudp7aqkpk"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://assets/graphics/icon.svg"
 
 [display]
 
-window/size/viewport_width=320
-window/size/viewport_height=180
-window/size/window_width_override=1280
-window/size/window_height_override=720
+window/size/viewport_width=480
+window/size/viewport_height=270
+window/size/window_width_override=1920
+window/size/window_height_override=1080
 window/stretch/mode="viewport"
 
 [global_group]
