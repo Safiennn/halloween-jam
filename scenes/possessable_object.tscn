@@ -1,11 +1,24 @@
 [gd_scene format=3 uid="uid://do0jluss244jf"]
 
-[ext_resource type="Texture2D" uid="uid://dnv4pw67yumfc" path="res://assets/graphics/icon.svg" id="1_fqqs8"]
 [ext_resource type="Script" uid="uid://dv8bbtmpou2y1" path="res://scripts/possessable_object.gd" id="1_qsvu6"]
+[ext_resource type="Shader" uid="uid://b8l1uqfjx2esy" path="res://assets/graphics/shaders/outline.gdshader" id="2_5257w"]
 [ext_resource type="FontFile" uid="uid://jjrcc1b8r3jq" path="res://assets/fonts/LowresPixel-Regular.otf" id="3_0rfcp"]
+[ext_resource type="Texture2D" uid="uid://cswr07x1ch8wx" path="res://assets/graphics/lights/main.png" id="3_5257w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8gmtx"]
 radius = 24.020824
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o6xl0"]
+resource_local_to_scene = true
+shader = ExtResource("2_5257w")
+shader_parameter/color = Color(0.8117647, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = false
+shader_parameter/number_of_images = Vector2(1, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nht5g"]
 
 [sub_resource type="FontVariation" id="FontVariation_0rfcp"]
 base_font = ExtResource("3_0rfcp")
@@ -13,8 +26,19 @@ base_font = ExtResource("3_0rfcp")
 [sub_resource type="CircleShape2D" id="CircleShape2D_nht5g"]
 radius = 50.0
 
+[sub_resource type="Gradient" id="Gradient_qsvu6"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.5618557, 1)
+colors = PackedColorArray(0.84313726, 1, 1, 1, 0.8745098, 1, 1, 0.34509805, 0.83137256, 0.9254902, 0.9764706, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0rfcp"]
+gradient = SubResource("Gradient_qsvu6")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
+
 [node name="PossessableObject" type="Node2D" unique_id=516272827]
-scale = Vector2(0.7, 0.7)
 script = ExtResource("1_qsvu6")
 show_label = true
 
@@ -24,9 +48,9 @@ collision_layer = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1922221487]
 shape = SubResource("CircleShape2D_8gmtx")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1862741497]
-scale = Vector2(0.21875, 0.140625)
-texture = ExtResource("1_fqqs8")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=199837590]
+material = SubResource("ShaderMaterial_o6xl0")
+sprite_frames = SubResource("SpriteFrames_nht5g")
 
 [node name="Label" type="Label" parent="." unique_id=422688722]
 visible = false
@@ -48,5 +72,22 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NoiseRange" unique_id=803901428]
 shape = SubResource("CircleShape2D_nht5g")
 
+[node name="SoundFX" type="AudioStreamPlayer2D" parent="." unique_id=1379991924]
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1514744967]
+texture_filter = 2
+energy = 0.6
+shadow_enabled = true
+shadow_filter = 1
+texture = SubResource("GradientTexture2D_0rfcp")
+
+[node name="Timer" type="Timer" parent="." unique_id=503282803]
+one_shot = true
+
+[node name="NoiseLight" type="PointLight2D" parent="." unique_id=1067203684]
+enabled = false
+texture = ExtResource("3_5257w")
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

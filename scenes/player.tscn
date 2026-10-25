@@ -2,18 +2,19 @@
 
 [ext_resource type="Script" uid="uid://c31l5rvgqm0hh" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://blb85dpt8lvan" path="res://assets/graphics/player.png" id="2_g2els"]
+[ext_resource type="Texture2D" uid="uid://ds1rrfc4fqq6i" path="res://assets/graphics/shadow.png" id="3_qhqgy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nht5g"]
 radius = 5.0
 height = 14.0
 
-[sub_resource type="Gradient" id="Gradient_g2els"]
+[sub_resource type="Gradient" id="Gradient_qhqgy"]
 interpolation_mode = 2
 offsets = PackedFloat32Array(0, 0.5618557, 1)
 colors = PackedColorArray(0.84313726, 1, 1, 1, 0.8745098, 1, 1, 0.34509805, 0.83137256, 0.9254902, 0.9764706, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_dqkch"]
-gradient = SubResource("Gradient_g2els")
+gradient = SubResource("Gradient_qhqgy")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.5, 0)
@@ -35,3 +36,12 @@ energy = 0.2
 shadow_enabled = true
 shadow_filter = 1
 texture = SubResource("GradientTexture2D_dqkch")
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=1194153229]
+modulate = Color(1, 1, 1, 0.7411765)
+position = Vector2(0, 8)
+texture = ExtResource("3_qhqgy")
+
+[node name="Timer" type="Timer" parent="." unique_id=19705463]
+wait_time = 3.0
+one_shot = true
