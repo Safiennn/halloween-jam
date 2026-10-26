@@ -8,6 +8,18 @@ extends CharacterBody2D
 # Index of the marker the hunter is currently walking to.
 var active_marker = 0
 var direction = 1
+var ghost = null
+
+func _ready() -> void:
+	var tween = create_tween()
+	tween.tween_property($Sprite2D, "rotation_degrees", -3.0, 0.1).set_trans(Tween.TRANS_SINE)
+	tween.parallel().tween_property($Sprite2D, "scale", Vector2(1.0, 1.0), 0.6).set_trans(Tween.TRANS_SINE)
+	tween.parallel().tween_property($Shadow, "scale", Vector2(1.0, 1.0), 0.6).set_trans(Tween.TRANS_SINE)
+	tween.tween_property($Sprite2D, "rotation_degrees", 3.0, 0.1).set_trans(Tween.TRANS_SINE)
+	tween.parallel().tween_property($Sprite2D, "scale", Vector2(1.05, 0.95), 0.6).set_trans(Tween.TRANS_SINE)
+	tween.parallel().tween_property($Shadow, "scale", Vector2(1.05, 0.95), 0.6).set_trans(Tween.TRANS_SINE)
+	tween.set_loops()
+
 
 func _physics_process(_delta: float) -> void:
 	if global_position.distance_to(markers[active_marker].global_position) < 5:
@@ -25,6 +37,17 @@ func _physics_process(_delta: float) -> void:
 	else:
 		velocity = global_position.direction_to(markers[active_marker].global_position) * speed
 		move_and_slide()
+		if velocity.x > 0:
+			$Sprite2D.flip_h = false
+		else:
+			$Sprite2D.flip_h = true
+		$Flashlight.rotation = velocity.angle()
+		
+	if ghost:
+		$Flashlight/RayCast2D.target_position = $Flashlight/RayCast2D.to_local(ghost.global_position)
+		$Flashlight/RayCast2D.force_raycast_update()
+		if not $Flashlight/RayCast2D.is_colliding():
+			get_tree().call_deferred("reload_current_scene")
 
 func get_scared():
 	direction *= -1
@@ -33,4 +56,9 @@ func get_scared():
 
 func _on_detection_range_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		get_tree().call_deferred("reload_current_scene")
+		ghost = body
+
+
+func _on_detection_range_body_exited(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		ghost = null

@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://n75hajcnwuew" path="res://scenes/hunter.tscn" id="3_sugp2"]
 [ext_resource type="Texture2D" uid="uid://cswr07x1ch8wx" path="res://assets/graphics/lights/main.png" id="4_jyhfs"]
 [ext_resource type="SpriteFrames" uid="uid://ddtoqo5l7n5db" path="res://scenes/spriteframes/tv.tres" id="4_o6xl0"]
+[ext_resource type="Shader" uid="uid://ckkwv2vyhdirn" path="res://assets/graphics/shaders/main.gdshader" id="8_tipki"]
+[ext_resource type="Shader" uid="uid://cjbmtw746y74f" path="res://assets/graphics/shaders/vignette.gdshader" id="9_85g3d"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_jyhfs"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -585,6 +587,17 @@ physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 5
 sources/0 = SubResource("TileSetAtlasSource_tefeu")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nht5g"]
+shader = ExtResource("8_tipki")
+shader_parameter/grain_amount = 0.05
+shader_parameter/grain_size = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oj040"]
+shader = ExtResource("9_85g3d")
+shader_parameter/alpha = 0.4
+shader_parameter/inner_radius = 0.0
+shader_parameter/outer_radius = 1.0
+
 [node name="Main" type="Node2D" unique_id=1780577006]
 
 [node name="TileMaps" type="Node2D" parent="." unique_id=1365566133]
@@ -694,3 +707,22 @@ color = Color(1, 0.8235294, 0.5058824, 1)
 shadow_enabled = true
 texture = ExtResource("4_jyhfs")
 texture_scale = 0.4
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1385127959]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=666322296]
+material = SubResource("ShaderMaterial_nht5g")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer" unique_id=906996398]
+material = SubResource("ShaderMaterial_oj040")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

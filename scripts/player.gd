@@ -10,7 +10,7 @@ var possessed_object = null
 
 
 func _ready() -> void:
-	var tween = get_tree().create_tween()
+	var tween = create_tween()
 	tween.tween_property($Sprite2D, "position:y", -2.0, 0.6).set_trans(Tween.TRANS_SINE)
 	tween.parallel().tween_property($Sprite2D, "scale", Vector2(1.0, 1.0), 0.6).set_trans(Tween.TRANS_SINE)
 	tween.parallel().tween_property($Shadow, "scale", Vector2(1.0, 1.0), 0.6).set_trans(Tween.TRANS_SINE)

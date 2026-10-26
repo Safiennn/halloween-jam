@@ -32,7 +32,6 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		body.clear_nearby_object()
 		$AnimatedSprite2D.material.set_shader_parameter("width", 0)
-		
 
 
 func make_noise():
