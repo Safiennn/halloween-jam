@@ -31,6 +31,7 @@ shape = SubResource("CapsuleShape2D_nht5g")
 texture = ExtResource("2_g2els")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=55627433]
+z_index = 1000
 texture_filter = 2
 color = Color(0.6039216, 1, 1, 1)
 energy = 0.5
