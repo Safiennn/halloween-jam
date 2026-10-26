@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://gso7w0focloj"]
+
+[ext_resource type="Shader" uid="uid://ckkwv2vyhdirn" path="res://assets/graphics/shaders/main.gdshader" id="1_pinm0"]
+[ext_resource type="Shader" uid="uid://cjbmtw746y74f" path="res://assets/graphics/shaders/vignette.gdshader" id="2_pb5on"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nht5g"]
+shader = ExtResource("1_pinm0")
+shader_parameter/grain_amount = 0.05
+shader_parameter/grain_size = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oj040"]
+shader = ExtResource("2_pb5on")
+shader_parameter/alpha = 0.4
+shader_parameter/inner_radius = 0.0
+shader_parameter/outer_radius = 1.0
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=2081556148]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=978932132]
+material = SubResource("ShaderMaterial_nht5g")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1767714292]
+material = SubResource("ShaderMaterial_oj040")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

@@ -1,0 +1,4 @@
+Dev Essentials - Modern Interiors (V1.0)
+By A-Something: https://a-something.itch.io
+Bought as part of the "Two Eras Interior Tileset" bundle, Oct 2026.
+Full source files (.aseprite) live in ~/Game Development/Assets/dev_essentials_modern_interiors
