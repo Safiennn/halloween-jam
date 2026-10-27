@@ -87,6 +87,7 @@ one_shot = true
 
 [node name="NoiseLight" type="PointLight2D" parent="." unique_id=1067203684]
 enabled = false
+shadow_enabled = true
 texture = ExtResource("3_5257w")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
