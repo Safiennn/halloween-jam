@@ -8,10 +8,13 @@ extends Node2D
 @export var noise_light_flicker : bool
 @export var flicker_min_energy : float = 0.1
 @export var flicker_speed : float = 0.1
+@export var scare_radius : float = 50.0
 var flicker_tween : Tween
+var is_possessed : bool = false
 
 
 func _ready() -> void:
+	$NoiseRange/CollisionShape2D.shape.radius = scare_radius
 	$AnimatedSprite2D.sprite_frames = sprite_frames
 	$SoundFX.stream = sound_fx
 	$NoiseLight.energy = noise_light_energy
@@ -60,12 +63,30 @@ func stop_noise():
 
 
 func show_glow():
+	is_possessed = true
 	$PointLight2D.enabled = true
+	var hunters = $NoiseRange.get_overlapping_bodies()
+	for hunter in hunters:
+		hunter.show_outline()
 
 
 func hide_glow():
+	is_possessed = false
 	$PointLight2D.enabled = false
+	var hunters = $NoiseRange.get_overlapping_bodies()
+	for hunter in hunters:
+		hunter.hide_outline()
 
 
 func _on_timer_timeout() -> void:
 	stop_noise()
+
+
+func _on_noise_range_body_entered(body: Node2D) -> void:
+	if is_possessed and body.is_in_group("hunter"):
+		body.show_outline()
+
+
+func _on_noise_range_body_exited(body: Node2D) -> void:
+	if body.is_in_group("hunter"):
+		body.hide_outline()

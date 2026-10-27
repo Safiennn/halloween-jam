@@ -9690,6 +9690,7 @@ noise_light_energy = 0.5
 noise_light_color = Color(0.69803923, 1, 1, 1)
 noise_light_flicker = true
 flicker_speed = 0.05
+scare_radius = 75.19
 
 [node name="Piano" parent="Objects/PossessableObjects" unique_id=1052764816 instance=ExtResource("3_2y5yt")]
 z_index = 0

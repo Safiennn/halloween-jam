@@ -11,6 +11,7 @@ var direction = 1
 var ghost = null
 
 func _ready() -> void:
+	$Sprite2D.material.set_shader_parameter("width", 0)
 	var tween = create_tween()
 	tween.tween_property($Sprite2D, "rotation_degrees", -3.0, 0.1).set_trans(Tween.TRANS_SINE)
 	tween.parallel().tween_property($Sprite2D, "scale", Vector2(1.0, 1.0), 0.6).set_trans(Tween.TRANS_SINE)
@@ -64,3 +65,10 @@ func _on_detection_range_body_entered(body: Node2D) -> void:
 func _on_detection_range_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		ghost = null
+
+func show_outline():
+	$Sprite2D.material.set_shader_parameter("width", 1)
+
+
+func hide_outline():
+	$Sprite2D.material.set_shader_parameter("width", 0)

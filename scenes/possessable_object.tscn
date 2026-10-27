@@ -1,22 +1,12 @@
 [gd_scene format=3 uid="uid://do0jluss244jf"]
 
 [ext_resource type="Script" uid="uid://dv8bbtmpou2y1" path="res://scripts/possessable_object.gd" id="1_qsvu6"]
-[ext_resource type="Shader" uid="uid://b8l1uqfjx2esy" path="res://assets/graphics/shaders/outline.gdshader" id="2_5257w"]
+[ext_resource type="Material" uid="uid://cao3pg021s7gm" path="res://assets/graphics/shaders/outline.tres" id="2_5257w"]
 [ext_resource type="FontFile" uid="uid://jjrcc1b8r3jq" path="res://assets/fonts/LowresPixel-Regular.otf" id="3_0rfcp"]
 [ext_resource type="Texture2D" uid="uid://cswr07x1ch8wx" path="res://assets/graphics/lights/main.png" id="3_5257w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8gmtx"]
 radius = 24.020824
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_o6xl0"]
-resource_local_to_scene = true
-shader = ExtResource("2_5257w")
-shader_parameter/color = Color(0.8117647, 1, 1, 1)
-shader_parameter/width = 1.0
-shader_parameter/pattern = 0
-shader_parameter/inside = false
-shader_parameter/add_margins = false
-shader_parameter/number_of_images = Vector2(1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nht5g"]
 
@@ -24,6 +14,7 @@ shader_parameter/number_of_images = Vector2(1, 1)
 base_font = ExtResource("3_0rfcp")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nht5g"]
+resource_local_to_scene = true
 radius = 50.0
 
 [sub_resource type="Gradient" id="Gradient_qsvu6"]
@@ -50,7 +41,7 @@ collision_layer = 0
 shape = SubResource("CircleShape2D_8gmtx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=199837590]
-material = SubResource("ShaderMaterial_o6xl0")
+material = ExtResource("2_5257w")
 sprite_frames = SubResource("SpriteFrames_nht5g")
 
 [node name="Label" type="Label" parent="." unique_id=422688722]
@@ -93,4 +84,6 @@ texture = ExtResource("3_5257w")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="NoiseRange" to="." method="_on_noise_range_body_entered"]
+[connection signal="body_exited" from="NoiseRange" to="." method="_on_noise_range_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

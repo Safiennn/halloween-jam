@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cao3pg021s7gm"]
+
+[ext_resource type="Shader" uid="uid://b8l1uqfjx2esy" path="res://assets/graphics/shaders/outline.gdshader" id="1_dstmb"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_dstmb")
+shader_parameter/color = Color(0.8117647, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = false
+shader_parameter/number_of_images = Vector2(1, 1)
