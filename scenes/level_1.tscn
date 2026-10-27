@@ -26,6 +26,10 @@
 [ext_resource type="Texture2D" uid="uid://b268242ah43uc" path="res://assets/graphics/tilesets/modern_interiors/building_blocks/doors_and_windows.png" id="18_wom8k"]
 [ext_resource type="Texture2D" uid="uid://caii44fcshues" path="res://assets/graphics/piano.png" id="22_s7g0b"]
 [ext_resource type="Texture2D" uid="uid://cswr07x1ch8wx" path="res://assets/graphics/lights/main.png" id="24_x2fux"]
+[ext_resource type="Script" uid="uid://ct6cq1cputf8r" path="res://scripts/death_screen.gd" id="27_k8ld0"]
+[ext_resource type="Theme" uid="uid://b6608y06wngqx" path="res://assets/fonts/new_theme.tres" id="27_mmfjm"]
+[ext_resource type="Script" uid="uid://bgraubf16q2oj" path="res://scripts/pause_menu.gd" id="29_iw4em"]
+[ext_resource type="Script" uid="uid://cobt3ev1mx4pm" path="res://scripts/win_screen.gd" id="29_mbb35"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_15mv3"]
 texture = ExtResource("1_pa8r4")
@@ -10215,7 +10219,7 @@ tile_set = SubResource("TileSet_iw4em")
 [node name="Objects" type="Node2D" parent="." unique_id=1533293668]
 
 [node name="Finish" parent="Objects" unique_id=1692256549 instance=ExtResource("2_e3sih")]
-position = Vector2(-164, 30)
+position = Vector2(432, 30)
 
 [node name="PossessableObjects" type="Node2D" parent="Objects" unique_id=1881689694]
 
@@ -10248,7 +10252,7 @@ flicker_speed = 0.05
 
 [node name="Player" parent="Entities" unique_id=1373740912 instance=ExtResource("5_go7sj")]
 z_index = 100
-position = Vector2(71, 56)
+position = Vector2(370, 56)
 
 [node name="Hunter" parent="Entities" unique_id=1514925568 node_paths=PackedStringArray("markers") instance=ExtResource("6_7gny6")]
 position = Vector2(162, 152)
@@ -10377,4 +10381,179 @@ shadow_enabled = true
 texture = ExtResource("24_x2fux")
 texture_scale = 0.5
 
-[node name="CanvasLayer" parent="." unique_id=2081556148 instance=ExtResource("8_6dial")]
+[node name="CanvasLayers" type="Node2D" parent="." unique_id=968072778]
+
+[node name="VFX" parent="CanvasLayers" unique_id=2081556148 instance=ExtResource("8_6dial")]
+
+[node name="Death Screen" type="CanvasLayer" parent="CanvasLayers" unique_id=924113579]
+process_mode = 3
+visible = false
+script = ExtResource("27_k8ld0")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayers/Death Screen" unique_id=1891033447]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.16078432, 0.16078432, 0.16078432, 0.6627451)
+
+[node name="Label" type="Label" parent="CanvasLayers/Death Screen" unique_id=2100804974]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -63.0
+offset_top = 103.0
+offset_right = 63.0
+offset_bottom = 131.0
+grow_horizontal = 2
+offset_transform_enabled = true
+theme = ExtResource("27_mmfjm")
+theme_override_colors/font_shadow_color = Color(0.91764706, 0.31764707, 0.07058824, 0.7294118)
+text = "You got caught!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QuitButton" type="Button" parent="CanvasLayers/Death Screen" unique_id=612628077]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -22.0
+offset_top = -92.0
+offset_right = 22.0
+offset_bottom = -70.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("27_mmfjm")
+theme_override_font_sizes/font_size = 16
+text = "QUIT"
+
+[node name="RetryButton" type="Button" parent="CanvasLayers/Death Screen" unique_id=1596238650]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -26.5
+offset_top = -120.0
+offset_right = 26.5
+offset_bottom = -98.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("27_mmfjm")
+theme_override_font_sizes/font_size = 16
+text = "RETRY"
+
+[node name="Pause Menu" type="CanvasLayer" parent="CanvasLayers" unique_id=972148623]
+process_mode = 3
+visible = false
+script = ExtResource("29_iw4em")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayers/Pause Menu" unique_id=597429700]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.16078432, 0.16078432, 0.16078432, 0.6627451)
+
+[node name="Label" type="Label" parent="CanvasLayers/Pause Menu" unique_id=1440707759]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -63.0
+offset_top = 103.0
+offset_right = 63.0
+offset_bottom = 131.0
+grow_horizontal = 2
+offset_transform_enabled = true
+theme = ExtResource("27_mmfjm")
+theme_override_colors/font_shadow_color = Color(0.91764706, 0.31764707, 0.07058824, 0.7294118)
+text = "Paused"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QuitButton" type="Button" parent="CanvasLayers/Pause Menu" unique_id=481331776]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -22.0
+offset_top = -92.0
+offset_right = 22.0
+offset_bottom = -70.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("27_mmfjm")
+theme_override_font_sizes/font_size = 16
+text = "QUIT"
+
+[node name="RetryButton" type="Button" parent="CanvasLayers/Pause Menu" unique_id=556870752]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -26.5
+offset_top = -120.0
+offset_right = 26.5
+offset_bottom = -98.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("27_mmfjm")
+theme_override_font_sizes/font_size = 16
+text = "RETRY"
+
+[node name="Win Screen" type="CanvasLayer" parent="CanvasLayers" unique_id=1341697784]
+process_mode = 3
+visible = false
+script = ExtResource("29_mbb35")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayers/Win Screen" unique_id=666674564]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.16078432, 0.16078432, 0.16078432, 0.6627451)
+
+[node name="Label" type="Label" parent="CanvasLayers/Win Screen" unique_id=1205102850]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -63.0
+offset_top = 103.0
+offset_right = 63.0
+offset_bottom = 131.0
+grow_horizontal = 2
+offset_transform_enabled = true
+theme = ExtResource("27_mmfjm")
+theme_override_colors/font_shadow_color = Color(0.91764706, 0.31764707, 0.07058824, 0.7294118)
+text = "You escaped!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NextButton" type="Button" parent="CanvasLayers/Win Screen" unique_id=1346013782]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -26.5
+offset_top = -120.0
+offset_right = 26.5
+offset_bottom = -98.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("27_mmfjm")
+theme_override_font_sizes/font_size = 16
+text = "NEXT LEVEL"
+
+[connection signal="pressed" from="CanvasLayers/Death Screen/QuitButton" to="CanvasLayers/Death Screen" method="_on_quit_button_pressed"]
+[connection signal="pressed" from="CanvasLayers/Death Screen/RetryButton" to="CanvasLayers/Death Screen" method="_on_retry_button_pressed"]
+[connection signal="pressed" from="CanvasLayers/Pause Menu/QuitButton" to="CanvasLayers/Pause Menu" method="_on_quit_button_pressed"]
+[connection signal="pressed" from="CanvasLayers/Pause Menu/RetryButton" to="CanvasLayers/Pause Menu" method="_on_retry_button_pressed"]
+[connection signal="pressed" from="CanvasLayers/Win Screen/NextButton" to="CanvasLayers/Win Screen" method="_on_next_button_pressed"]

@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://cm78emnktpg8r"]
+
+[ext_resource type="Script" uid="uid://b78o583vvxyfv" path="res://scripts/main_menu.gd" id="1_ekxnf"]
+[ext_resource type="Theme" uid="uid://b6608y06wngqx" path="res://assets/fonts/new_theme.tres" id="1_l6cm7"]
+
+[node name="Main Menu" type="CanvasLayer" unique_id=217471371]
+process_mode = 3
+script = ExtResource("1_ekxnf")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1529197256]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.15487596, 0.154876, 0.15487596, 1)
+
+[node name="Label" type="Label" parent="." unique_id=2055798244]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -90.0
+offset_top = 64.0
+offset_right = 90.0
+offset_bottom = 120.0
+grow_horizontal = 2
+offset_transform_enabled = true
+theme = ExtResource("1_l6cm7")
+theme_override_colors/font_shadow_color = Color(0.91764706, 0.31764707, 0.07058824, 0.7294118)
+theme_override_font_sizes/font_size = 64
+text = "SPOOK"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QuitButton" type="Button" parent="." unique_id=547233294]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -22.0
+offset_top = -92.0
+offset_right = 22.0
+offset_bottom = -70.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_l6cm7")
+theme_override_font_sizes/font_size = 16
+text = "QUIT"
+
+[node name="StartButton" type="Button" parent="." unique_id=133190660]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -22.0
+offset_top = -120.0
+offset_right = 22.0
+offset_bottom = -98.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_l6cm7")
+theme_override_font_sizes/font_size = 16
+text = "PLAY"
+
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
