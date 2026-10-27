@@ -51,15 +51,18 @@ func _physics_process(delta: float) -> void:
 # Save nearby object into possessed_object variable so leaving still works even if nearby_object changes while inside.
 func _possession():
 	visible = false
+	$PossessSFX.play()
 	is_possessing = true
 	velocity = Vector2.ZERO
 	$CollisionShape2D.disabled = true
 	possessed_object = nearby_object
 	possessed_object.show_glow()
+	
 
 # Show player and set players position to the possessed_object's position.
 func _leave_possesion():
 	visible = true
+	$UnpossessSFX.play()
 	is_possessing = false
 	$CollisionShape2D.disabled = false
 	global_position = possessed_object.global_position
@@ -72,3 +75,6 @@ func set_nearby_object(object):
 
 func clear_nearby_object():
 	nearby_object = null
+
+func play_death_sound():
+	$AudioStreamPlayer.play()

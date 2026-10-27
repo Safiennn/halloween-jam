@@ -74,6 +74,7 @@ collision_mask = 4
 shape = SubResource("CircleShape2D_nht5g")
 
 [node name="SoundFX" type="AudioStreamPlayer2D" parent="." unique_id=1379991924]
+bus = &"SFX"
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1514744967]
 texture_filter = 2

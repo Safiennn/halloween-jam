@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bq6mivyp8eso2"]
+
+[ext_resource type="AudioStream" uid="uid://w70f83xuwqin" path="res://assets/audio/bgmusic.wav" id="1_6n3bj"]
+[ext_resource type="Script" uid="uid://bfbw1e0wmlehn" path="res://scripts/audio.gd" id="2_bwtr5"]
+[ext_resource type="AudioStream" uid="uid://c6ih4m6i3jkxw" path="res://assets/audio/sfx/denielcz-immersivecontrol-button-click-sound-463065.mp3" id="3_f5a2e"]
+
+[node name="Audio" type="AudioStreamPlayer" unique_id=1752836412]
+process_mode = 3
+stream = ExtResource("1_6n3bj")
+volume_db = -20.0
+autoplay = true
+script = ExtResource("2_bwtr5")
+
+[node name="Click" type="AudioStreamPlayer" parent="." unique_id=950428051]
+process_mode = 3
+stream = ExtResource("3_f5a2e")
+bus = &"SFX"

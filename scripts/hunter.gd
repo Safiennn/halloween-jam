@@ -47,6 +47,7 @@ func _physics_process(_delta: float) -> void:
 		$Flashlight/RayCast2D.target_position = $Flashlight/RayCast2D.to_local(ghost.global_position)
 		$Flashlight/RayCast2D.force_raycast_update()
 		if not $Flashlight/RayCast2D.is_colliding():
+			ghost.play_death_sound()
 			get_tree().paused = true
 			$"../../CanvasLayers/Death Screen".show()
 

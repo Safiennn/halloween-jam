@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://c31l5rvgqm0hh" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://blb85dpt8lvan" path="res://assets/graphics/player.png" id="2_g2els"]
 [ext_resource type="Texture2D" uid="uid://ds1rrfc4fqq6i" path="res://assets/graphics/shadow.png" id="3_qhqgy"]
+[ext_resource type="AudioStream" uid="uid://le216xyrpkgf" path="res://assets/audio/sfx/possess.wav" id="4_qlg0r"]
+[ext_resource type="AudioStream" uid="uid://d1maga2fjdkeq" path="res://assets/audio/sfx/unpossess.wav" id="5_tuyoq"]
+[ext_resource type="AudioStream" uid="uid://cgynr72xokqrw" path="res://assets/audio/sfx/caught.mp3" id="6_tuyoq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nht5g"]
 radius = 5.0
@@ -47,3 +50,16 @@ texture = ExtResource("3_qhqgy")
 [node name="Timer" type="Timer" parent="." unique_id=19705463]
 wait_time = 3.0
 one_shot = true
+
+[node name="PossessSFX" type="AudioStreamPlayer2D" parent="." unique_id=448928614]
+stream = ExtResource("4_qlg0r")
+bus = &"SFX"
+
+[node name="UnpossessSFX" type="AudioStreamPlayer2D" parent="." unique_id=558336859]
+stream = ExtResource("5_tuyoq")
+bus = &"SFX"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1514298058]
+process_mode = 3
+stream = ExtResource("6_tuyoq")
+bus = &"SFX"
