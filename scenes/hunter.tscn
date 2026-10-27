@@ -33,7 +33,7 @@ shape = SubResource("CapsuleShape2D_oj040")
 
 [node name="Shadow" type="Sprite2D" parent="." unique_id=958151461]
 modulate = Color(1, 1, 1, 0.95686275)
-position = Vector2(-0.5, -5)
+position = Vector2(0, -4)
 scale = Vector2(0.9375, 1)
 texture = ExtResource("3_amnbx")
 
