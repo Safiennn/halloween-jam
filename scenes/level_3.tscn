@@ -6257,7 +6257,7 @@ position = Vector2(422, 210)
 
 [node name="Player" parent="Entities" unique_id=1373740912 instance=ExtResource("24_04pdi")]
 z_index = 100
-position = Vector2(306, 162)
+position = Vector2(76, 223)
 
 [node name="Hunter" parent="Entities" unique_id=1514925568 node_paths=PackedStringArray("markers") instance=ExtResource("25_ddneo")]
 position = Vector2(223, 85)
