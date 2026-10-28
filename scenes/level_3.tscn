@@ -10004,6 +10004,13 @@ text = "NEXT LEVEL"
 
 [node name="UI" parent="CanvasLayers" unique_id=640032260 instance=ExtResource("36_ciptj")]
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1075896212]
+position = Vector2(240, 135)
+limit_left = 0
+limit_top = 0
+limit_right = 480
+limit_bottom = 272
+
 [connection signal="mouse_entered" from="CanvasLayers/Death Screen/QuitButton" to="CanvasLayers/Death Screen" method="_on_quit_button_mouse_entered"]
 [connection signal="pressed" from="CanvasLayers/Death Screen/QuitButton" to="CanvasLayers/Death Screen" method="_on_quit_button_pressed"]
 [connection signal="mouse_entered" from="CanvasLayers/Death Screen/RetryButton" to="CanvasLayers/Death Screen" method="_on_retry_button_mouse_entered"]

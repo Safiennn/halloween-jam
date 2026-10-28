@@ -58,6 +58,10 @@ func stop_noise():
 	$AnimatedSprite2D.play("default")
 	$NoiseLight.enabled = false
 	$NoiseLight.energy = noise_light_energy
+	var tween = create_tween()
+	tween.tween_property($SoundFX, "volume_db", -40, 0.4)
+	await tween.finished
+	$SoundFX.stop()
 	if flicker_tween:
 		flicker_tween.kill()
 

@@ -11,12 +11,12 @@ var possessed_object = null
 
 func _ready() -> void:
 	var tween = create_tween()
-	tween.tween_property($Sprite2D, "position:y", -2.0, 0.6).set_trans(Tween.TRANS_SINE)
-	tween.parallel().tween_property($Sprite2D, "scale", Vector2(1.0, 1.0), 0.6).set_trans(Tween.TRANS_SINE)
-	tween.parallel().tween_property($Shadow, "scale", Vector2(1.0, 1.0), 0.6).set_trans(Tween.TRANS_SINE)
-	tween.tween_property($Sprite2D, "position:y", 0.0, 0.6).set_trans(Tween.TRANS_SINE)
-	tween.parallel().tween_property($Sprite2D, "scale", Vector2(1.05, 0.95), 0.6).set_trans(Tween.TRANS_SINE)
-	tween.parallel().tween_property($Shadow, "scale", Vector2(1.05, 0.95), 0.6).set_trans(Tween.TRANS_SINE)
+	tween.tween_property($Visuals/Sprite2D, "position:y", -2.0, 0.6).set_trans(Tween.TRANS_SINE)
+	tween.parallel().tween_property($Visuals/Sprite2D, "scale", Vector2(1.0, 1.0), 0.6).set_trans(Tween.TRANS_SINE)
+	tween.parallel().tween_property($Visuals/Shadow, "scale", Vector2(1.0, 1.0), 0.6).set_trans(Tween.TRANS_SINE)
+	tween.tween_property($Visuals/Sprite2D, "position:y", 0.0, 0.6).set_trans(Tween.TRANS_SINE)
+	tween.parallel().tween_property($Visuals/Sprite2D, "scale", Vector2(1.05, 0.95), 0.6).set_trans(Tween.TRANS_SINE)
+	tween.parallel().tween_property($Visuals/Shadow, "scale", Vector2(1.05, 0.95), 0.6).set_trans(Tween.TRANS_SINE)
 	tween.set_loops()
 
 
@@ -25,9 +25,9 @@ func get_input(delta):
 	velocity += input_direction * acceleration * delta
 	velocity = velocity.limit_length(max_speed) * drift
 	if input_direction.x < 0:
-		$Sprite2D.flip_h = true
+		$Visuals/Sprite2D.flip_h = true
 	elif input_direction.x > 0:
-		$Sprite2D.flip_h = false
+		$Visuals/Sprite2D.flip_h = false
 
 
 func _physics_process(delta: float) -> void:
@@ -53,17 +53,21 @@ func _physics_process(delta: float) -> void:
 # Hide the player and set velocity to 0 so the player doesn't drift off when leaving.
 # Save nearby object into possessed_object variable so leaving still works even if nearby_object changes while inside.
 func _possession():
-	visible = false
+	var tween = create_tween()
+	tween.tween_property($Visuals, "scale", Vector2(0.0, 0.0), 0.2)
 	$PossessSFX.play()
 	is_possessing = true
 	velocity = Vector2.ZERO
 	$CollisionShape2D.disabled = true
 	possessed_object = nearby_object
 	possessed_object.show_glow()
-	
-
+	await tween.finished
+	if is_possessing:
+		visible = false
 # Show player and set players position to the possessed_object's position.
 func _leave_possesion():
+	var tween = create_tween()
+	tween.tween_property($Visuals, "scale", Vector2(1.0, 1.0), 0.2).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	visible = true
 	$UnpossessSFX.play()
 	is_possessing = false
@@ -81,3 +85,13 @@ func clear_nearby_object():
 
 func play_death_sound():
 	$AudioStreamPlayer.play()
+
+func get_caught():
+	get_tree().paused = true
+	var tween = create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	tween.tween_property($"../../Camera2D", "zoom", Vector2(3.0, 3.0), 0.6)
+	tween.parallel().tween_property($"../../Camera2D", "global_position", global_position, 0.6)
+	tween.tween_property($Visuals, "scale", Vector2(0.0, 0.0), 0.2)
+	play_death_sound()
+	await tween.finished
+	$"../../CanvasLayers/Death Screen".show()

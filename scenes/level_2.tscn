@@ -9716,7 +9716,7 @@ noise_light_energy = 0.5
 noise_light_color = Color(0.69803923, 1, 1, 1)
 noise_light_flicker = true
 flicker_speed = 0.05
-scare_radius = 75.19
+scare_radius = 75.0
 
 [node name="Entities" type="Node2D" parent="." unique_id=1910410418]
 
@@ -9725,11 +9725,11 @@ z_index = 100
 position = Vector2(425, 68)
 
 [node name="Hunter" parent="Entities" unique_id=1514925568 node_paths=PackedStringArray("markers") instance=ExtResource("27_6jdxa")]
-position = Vector2(112, 245)
+position = Vector2(155, 245)
 markers = [NodePath("../../HunterRoutes/Hunter1/Marker2D"), NodePath("../../HunterRoutes/Hunter1/Marker2D2")]
 
 [node name="Hunter2" parent="Entities" unique_id=2061343617 node_paths=PackedStringArray("markers") instance=ExtResource("27_6jdxa")]
-position = Vector2(64, 174)
+position = Vector2(64, 223)
 markers = [NodePath("../../HunterRoutes/Hunter2/Marker2D"), NodePath("../../HunterRoutes/Hunter2/Marker2D2")]
 
 [node name="Hunter3" parent="Entities" unique_id=2070477900 node_paths=PackedStringArray("markers") instance=ExtResource("27_6jdxa")]
@@ -9741,15 +9741,15 @@ markers = [NodePath("../../HunterRoutes/Hunter3/Marker2D"), NodePath("../../Hunt
 [node name="Hunter1" type="Node2D" parent="HunterRoutes" unique_id=2082713529]
 
 [node name="Marker2D" type="Marker2D" parent="HunterRoutes/Hunter1" unique_id=2034597524]
-position = Vector2(112, 245)
+position = Vector2(155, 245)
 
 [node name="Marker2D2" type="Marker2D" parent="HunterRoutes/Hunter1" unique_id=779393176]
-position = Vector2(447, 245)
+position = Vector2(361, 245)
 
 [node name="Hunter2" type="Node2D" parent="HunterRoutes" unique_id=1390257305]
 
 [node name="Marker2D" type="Marker2D" parent="HunterRoutes/Hunter2" unique_id=277933850]
-position = Vector2(64, 174)
+position = Vector2(64, 223)
 
 [node name="Marker2D2" type="Marker2D" parent="HunterRoutes/Hunter2" unique_id=578610382]
 position = Vector2(64, 80)
@@ -9992,6 +9992,13 @@ theme_override_font_sizes/font_size = 16
 text = "NEXT LEVEL"
 
 [node name="UI" parent="CanvasLayers" unique_id=640032260 instance=ExtResource("34_3buw8")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1900922899]
+position = Vector2(240, 135)
+limit_left = 0
+limit_top = 0
+limit_right = 480
+limit_bottom = 272
 
 [connection signal="mouse_entered" from="CanvasLayers/Death Screen/QuitButton" to="CanvasLayers/Death Screen" method="_on_quit_button_mouse_entered"]
 [connection signal="pressed" from="CanvasLayers/Death Screen/QuitButton" to="CanvasLayers/Death Screen" method="_on_quit_button_pressed"]
