@@ -26,6 +26,8 @@ func _on_collectable_collected():
 	collectables_collected += 1
 	if collectables_collected == collectable_amount:
 		$AudioStreamPlayer2D.play()
+		$StaticBody2D.hide()
+		$StaticBody2D/CollisionShape2D.call_deferred("set_disabled", true)
 
 func _process(_delta: float) -> void:
 	$"../../CanvasLayers/UI/Label".text = str(collectables_collected) + "/" + str(collectable_amount)

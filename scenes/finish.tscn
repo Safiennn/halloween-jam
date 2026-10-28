@@ -7,6 +7,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_07gpw"]
 size = Vector2(38, 42)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nht5g"]
+size = Vector2(32, 36)
+
 [node name="Finish" type="Node2D" unique_id=1692256549]
 z_index = 2000
 script = ExtResource("1_07gpw")
@@ -34,5 +37,11 @@ shape = SubResource("RectangleShape2D_07gpw")
 stream = ExtResource("3_2pftv")
 volume_db = 3.0
 bus = &"SFX"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=316128642]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=768851646]
+shape = SubResource("RectangleShape2D_nht5g")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

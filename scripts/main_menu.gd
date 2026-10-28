@@ -1,7 +1,9 @@
 extends CanvasLayer
 
 
-
+func _ready() -> void:
+	if OS.has_feature("web"):
+		$QuitButton.hide()
 
 
 func _on_quit_button_pressed() -> void:
