@@ -88,6 +88,11 @@ stream = ExtResource("7_lmlo1")
 volume_db = 8.0
 bus = &"SFX"
 
+[node name="WaitTimer" type="Timer" parent="." unique_id=945082002]
+wait_time = 2.0
+one_shot = true
+
 [connection signal="body_entered" from="Flashlight/DetectionRange" to="." method="_on_detection_range_body_entered"]
 [connection signal="body_exited" from="Flashlight/DetectionRange" to="." method="_on_detection_range_body_exited"]
 [connection signal="timeout" from="ScaredTimer" to="." method="_on_scared_timer_timeout"]
+[connection signal="timeout" from="WaitTimer" to="." method="_on_wait_timer_timeout"]

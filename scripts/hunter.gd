@@ -10,6 +10,7 @@ var active_marker = 0
 var direction = 1
 var ghost = null
 var is_frozen : bool = false
+var is_waiting : bool = false
 
 func _ready() -> void:
 	$Sprite2D.material.set_shader_parameter("width", 0)
@@ -33,23 +34,30 @@ func _physics_process(_delta: float) -> void:
 			direction = +1
 		# Move the hunter to the next marker.
 		active_marker += direction
-		$Flashlight.rotation = global_position.direction_to(markers[active_marker].global_position).angle()
+		var target_angle = global_position.direction_to(markers[active_marker].global_position).angle()
+		var turn_amount = abs(angle_difference($Flashlight.rotation, target_angle))
+		var turn_time = turn_amount / 2.0
+		var turn = angle_difference($Flashlight.rotation, target_angle)
+		turn_amount = abs(turn)
+		var tween = create_tween()
+		tween.tween_property($Flashlight, "rotation", $Flashlight.rotation + turn, turn_time)
+		is_waiting = true
+		$WaitTimer.start(turn_time)
 		$Flashlight.show()
 		$Flashlight/DetectionRange.monitoring = true
 		speed = 20.0
 		
-		
-	
 	# Make the hunter move towards the active marker.
 	else:
-		if is_frozen == false:
+		if is_frozen == false and is_waiting == false:
 			velocity = global_position.direction_to(markers[active_marker].global_position) * speed
 			move_and_slide()
-			if velocity.x > 0:
-				$Sprite2D.flip_h = false
-			else:
-				$Sprite2D.flip_h = true
 			$Flashlight.rotation = velocity.angle()
+			
+	if Vector2.from_angle($Flashlight.rotation).x > 0:
+		$Sprite2D.flip_h = false
+	else:
+		$Sprite2D.flip_h = true
 		
 	if ghost:
 		$Flashlight/RayCast2D.target_position = $Flashlight/RayCast2D.to_local(ghost.global_position)
@@ -63,12 +71,20 @@ func get_scared():
 	speed = 50.0
 	direction *= -1
 	active_marker += direction
+	if global_position.distance_to(markers[active_marker].global_position) < 5:
+		active_marker += direction
+		active_marker = clamp(active_marker, 0, markers.size() - 1)
+		if global_position.distance_to(markers[active_marker].global_position) < 5:
+			direction *= -1
+			active_marker += direction
 	is_frozen = true
 	$ScaredTimer.start()
 	$Flashlight.hide()
 	$Flashlight/DetectionRange.monitoring = false
 	show_outline()
 	$AudioStreamPlayer2D.play()
+	is_waiting = false
+	$WaitTimer.stop()
 
 func _on_detection_range_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
@@ -91,3 +107,7 @@ func _on_scared_timer_timeout() -> void:
 	is_frozen = false
 	$"!".hide()
 	
+
+
+func _on_wait_timer_timeout() -> void:
+	is_waiting = false
