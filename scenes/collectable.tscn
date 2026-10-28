@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cmf12hfltyq8t" path="res://scripts/collectable.gd" id="1_dnya4"]
 [ext_resource type="Material" uid="uid://cao3pg021s7gm" path="res://assets/graphics/shaders/outline.tres" id="1_llfh3"]
 [ext_resource type="Texture2D" uid="uid://b51wpb3bnyyrj" path="res://assets/graphics/tilesets/modern_interiors/furniture/toys.png" id="2_dnya4"]
+[ext_resource type="Texture2D" uid="uid://ds1rrfc4fqq6i" path="res://assets/graphics/shadow.png" id="2_ftjwp"]
 [ext_resource type="AudioStream" uid="uid://q6ofc1ad8da8" path="res://assets/audio/sfx/pickup.wav" id="4_i8gcc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nht5g"]
@@ -23,12 +24,6 @@ metadata/_snap_enabled = true
 [node name="Collectable" type="Node2D" unique_id=1401312027 groups=["collectable"]]
 script = ExtResource("1_dnya4")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=108339695]
-material = ExtResource("1_llfh3")
-texture = ExtResource("2_dnya4")
-region_enabled = true
-region_rect = Rect2(112, 17, 16, 16)
-
 [node name="Area2D" type="Area2D" parent="." unique_id=816121387]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1533088310]
@@ -47,6 +42,20 @@ texture = SubResource("GradientTexture2D_dnya4")
 stream = ExtResource("4_i8gcc")
 volume_db = -5.0
 bus = &"SFX"
+
+[node name="Visuals" type="Node2D" parent="." unique_id=404477101]
+
+[node name="Shadow" type="Sprite2D" parent="Visuals" unique_id=1685531656]
+modulate = Color(1, 1, 1, 0.7411765)
+position = Vector2(0, 3)
+scale = Vector2(1.6470588, 1)
+texture = ExtResource("2_ftjwp")
+
+[node name="Sprite2D" type="Sprite2D" parent="Visuals" unique_id=108339695]
+material = ExtResource("1_llfh3")
+texture = ExtResource("2_dnya4")
+region_enabled = true
+region_rect = Rect2(112, 17, 16, 16)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="finished" from="Pickup" to="." method="_on_pickup_finished"]

@@ -9680,7 +9680,7 @@ position = Vector2(33, 76)
 position = Vector2(39, 236)
 
 [node name="Collectable3" parent="Objects" unique_id=1951210733 instance=ExtResource("22_nquw4")]
-position = Vector2(411, 241)
+position = Vector2(447, 195)
 
 [node name="Finish" parent="Objects" unique_id=1692256549 instance=ExtResource("19_ngxfi")]
 position = Vector2(160, 125)
