@@ -35,8 +35,10 @@ func _physics_process(delta: float) -> void:
 		if is_possessing:
 			_leave_possesion()
 		# Only possess if there is a nearby_object.
-		elif nearby_object:
+		elif nearby_object and nearby_object.possession_time_left > nearby_object.possession_time * 0.25:
 			_possession()
+		else:
+			$ScareNotReady.play()
 			
 	# Only move when not possessing anything.
 	if not is_possessing:

@@ -27,7 +27,7 @@ func _on_collectable_collected():
 	if collectables_collected == collectable_amount:
 		$AudioStreamPlayer2D.play()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	$"../../CanvasLayers/UI/Label".text = str(collectables_collected) + "/" + str(collectable_amount)
 	if collectables_collected == collectable_amount:
 		$DoorClosed.hide()

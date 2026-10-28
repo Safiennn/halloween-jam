@@ -9730,7 +9730,7 @@ position = Vector2(180, 238)
 position = Vector2(288, 235)
 
 [node name="Collectable4" parent="Objects" unique_id=1154777769 instance=ExtResource("28_q0ron")]
-position = Vector2(257, 74)
+position = Vector2(175, 74)
 
 [node name="Entities" type="Node2D" parent="." unique_id=1910410418]
 
@@ -9739,12 +9739,12 @@ z_index = 100
 position = Vector2(65, 61)
 
 [node name="Hunter" parent="Entities" unique_id=1514925568 node_paths=PackedStringArray("markers") instance=ExtResource("6_7gny6")]
-position = Vector2(162, 152)
+position = Vector2(157, 152)
 markers = [NodePath("../../HunterRoutes/Hunter1/Marker2D3"), NodePath("../../HunterRoutes/Hunter1/Marker2D2"), NodePath("../../HunterRoutes/Hunter1/Marker2D")]
 
 [node name="Hunter2" parent="Entities" unique_id=696540794 node_paths=PackedStringArray("markers") instance=ExtResource("6_7gny6")]
-position = Vector2(189, 84)
-markers = [NodePath("../../HunterRoutes/Hunter2/Marker2D"), NodePath("../../HunterRoutes/Hunter2/Marker2D2"), NodePath("../../HunterRoutes/Hunter2/Marker2D3")]
+position = Vector2(189, 147)
+markers = [NodePath("../../HunterRoutes/Hunter2/Marker2D3"), NodePath("../../HunterRoutes/Hunter2/Marker2D"), NodePath("../../HunterRoutes/Hunter2/Marker2D2")]
 
 [node name="Hunter3" parent="Entities" unique_id=1154382151 node_paths=PackedStringArray("markers") instance=ExtResource("6_7gny6")]
 position = Vector2(353, 209)
@@ -9755,13 +9755,13 @@ markers = [NodePath("../../HunterRoutes/Hunter3/Marker2D"), NodePath("../../Hunt
 [node name="Hunter1" type="Node2D" parent="HunterRoutes" unique_id=2082713529]
 
 [node name="Marker2D" type="Marker2D" parent="HunterRoutes/Hunter1" unique_id=2034597524]
-position = Vector2(66, 220)
+position = Vector2(49, 220)
 
 [node name="Marker2D2" type="Marker2D" parent="HunterRoutes/Hunter1" unique_id=1282452712]
-position = Vector2(66, 152)
+position = Vector2(49, 152)
 
 [node name="Marker2D3" type="Marker2D" parent="HunterRoutes/Hunter1" unique_id=167496592]
-position = Vector2(162, 152)
+position = Vector2(157, 152)
 
 [node name="Hunter2" type="Node2D" parent="HunterRoutes" unique_id=1357891354]
 
@@ -9769,10 +9769,10 @@ position = Vector2(162, 152)
 position = Vector2(189, 84)
 
 [node name="Marker2D2" type="Marker2D" parent="HunterRoutes/Hunter2" unique_id=1516112712]
-position = Vector2(189, 152)
+position = Vector2(257, 84)
 
 [node name="Marker2D3" type="Marker2D" parent="HunterRoutes/Hunter2" unique_id=1897587226]
-position = Vector2(272, 152)
+position = Vector2(189, 147)
 
 [node name="Hunter3" type="Node2D" parent="HunterRoutes" unique_id=140582174]
 

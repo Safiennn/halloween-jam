@@ -29,6 +29,29 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.5, 0)
 metadata/_snap_enabled = true
 
+[sub_resource type="Theme" id="Theme_5257w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5257w"]
+bg_color = Color(0, 0, 0, 0.43529412)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(0.5, 0.5)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v6pcw"]
+bg_color = Color(1.732707e-06, 0.96733564, 0.92313653, 1)
+border_color = Color(0.44705883, 1, 0.9607843, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(0.5, 0.5)
+anti_aliasing = false
+
 [node name="PossessableObject" type="Node2D" unique_id=516272827]
 z_index = 1
 script = ExtResource("1_qsvu6")
@@ -81,6 +104,19 @@ one_shot = true
 enabled = false
 shadow_enabled = true
 texture = ExtResource("3_5257w")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1620849521]
+visible = false
+z_index = 2000
+z_as_relative = false
+offset_left = -18.0
+offset_top = -30.0
+offset_right = 18.814999
+offset_bottom = -26.0
+theme = SubResource("Theme_5257w")
+theme_override_styles/background = SubResource("StyleBoxFlat_5257w")
+theme_override_styles/fill = SubResource("StyleBoxFlat_v6pcw")
+show_percentage = false
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
