@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://ddq3dpsgrvmfu"]
+
+[ext_resource type="Theme" uid="uid://b6608y06wngqx" path="res://assets/fonts/new_theme.tres" id="1_yev5y"]
+[ext_resource type="Shader" uid="uid://b8l1uqfjx2esy" path="res://assets/graphics/shaders/outline.gdshader" id="2_gdt2y"]
+[ext_resource type="Texture2D" uid="uid://b51wpb3bnyyrj" path="res://assets/graphics/tilesets/modern_interiors/furniture/toys.png" id="3_wm3ai"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8dubc"]
+resource_local_to_scene = true
+shader = ExtResource("2_gdt2y")
+shader_parameter/color = Color(0.8117647, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = false
+shader_parameter/number_of_images = Vector2(1, 1)
+
+[node name="UI" type="CanvasLayer" unique_id=640032260]
+
+[node name="Label" type="Label" parent="." unique_id=34829643]
+offset_left = 32.0
+offset_top = 11.0
+offset_right = 72.0
+offset_bottom = 39.0
+theme = ExtResource("1_yev5y")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=855382132]
+material = SubResource("ShaderMaterial_8dubc")
+position = Vector2(27, 24)
+texture = ExtResource("3_wm3ai")
+region_enabled = true
+region_rect = Rect2(112, 17, 16, 16)

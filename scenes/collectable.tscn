@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://ckv54jpjdkvim"]
+
+[ext_resource type="Script" uid="uid://cmf12hfltyq8t" path="res://scripts/collectable.gd" id="1_dnya4"]
+[ext_resource type="Material" uid="uid://cao3pg021s7gm" path="res://assets/graphics/shaders/outline.tres" id="1_llfh3"]
+[ext_resource type="Texture2D" uid="uid://b51wpb3bnyyrj" path="res://assets/graphics/tilesets/modern_interiors/furniture/toys.png" id="2_dnya4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nht5g"]
+radius = 13.0
+
+[sub_resource type="Gradient" id="Gradient_qhqgy"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.5618557, 1)
+colors = PackedColorArray(0.84313726, 1, 1, 1, 0.8745098, 1, 1, 0.34509805, 0.83137256, 0.9254902, 0.9764706, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dnya4"]
+gradient = SubResource("Gradient_qhqgy")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
+
+[node name="Collectable" type="Node2D" unique_id=1401312027 groups=["collectable"]]
+script = ExtResource("1_dnya4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=108339695]
+material = ExtResource("1_llfh3")
+texture = ExtResource("2_dnya4")
+region_enabled = true
+region_rect = Rect2(112, 17, 16, 16)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=816121387]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1533088310]
+shape = SubResource("CircleShape2D_nht5g")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=2134764732]
+z_index = 1000
+texture_filter = 2
+color = Color(0.6039216, 1, 1, 1)
+energy = 0.5
+shadow_enabled = true
+shadow_filter = 1
+texture = SubResource("GradientTexture2D_dnya4")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

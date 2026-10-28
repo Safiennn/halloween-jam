@@ -1,23 +1,32 @@
 [gd_scene format=3 uid="uid://c2sjuk3cw83to"]
 
-[ext_resource type="Texture2D" uid="uid://dnv4pw67yumfc" path="res://assets/graphics/icon.svg" id="1_5nbog"]
 [ext_resource type="Script" uid="uid://mlca6pd2rh4o" path="res://scripts/finish.gd" id="1_07gpw"]
+[ext_resource type="Texture2D" uid="uid://b268242ah43uc" path="res://assets/graphics/tilesets/modern_interiors/building_blocks/doors_and_windows.png" id="2_07gpw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_07gpw"]
 size = Vector2(38, 42)
 
 [node name="Finish" type="Node2D" unique_id=1692256549]
+z_index = 2000
 script = ExtResource("1_07gpw")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=20643200]
+[node name="DoorClosed" type="Sprite2D" parent="." unique_id=20643200]
+texture = ExtResource("2_07gpw")
+region_enabled = true
+region_rect = Rect2(32, 153, 32, 40)
+
+[node name="DoorOpen" type="Sprite2D" parent="." unique_id=77929833]
 visible = false
-scale = Vector2(0.140625, 0.296875)
-texture = ExtResource("1_5nbog")
+position = Vector2(0, 4)
+texture = ExtResource("2_07gpw")
+region_enabled = true
+region_rect = Rect2(192, 153, 32, 48)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1088527417]
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=850127766]
+position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_07gpw")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
