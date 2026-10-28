@@ -41,8 +41,9 @@ func _physics_process(_delta: float) -> void:
 		turn_amount = abs(turn)
 		var tween = create_tween()
 		tween.tween_property($Flashlight, "rotation", $Flashlight.rotation + turn, turn_time)
-		is_waiting = true
-		$WaitTimer.start(turn_time)
+		if turn_time > 0:
+			is_waiting = true
+			$WaitTimer.start(turn_time)
 		$Flashlight.show()
 		$Flashlight/DetectionRange.monitoring = true
 		speed = 20.0

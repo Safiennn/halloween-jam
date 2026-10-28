@@ -16,6 +16,7 @@ func _ready() -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		if collectables_collected == collectable_amount:
+			Run.is_running = false
 			get_tree().paused = true
 			if next_level:
 				$"../../CanvasLayers/Win Screen".show()
