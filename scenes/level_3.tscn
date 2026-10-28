@@ -37,6 +37,7 @@
 [ext_resource type="Theme" uid="uid://b6608y06wngqx" path="res://assets/fonts/new_theme.tres" id="29_22ac7"]
 [ext_resource type="Script" uid="uid://bgraubf16q2oj" path="res://scripts/pause_menu.gd" id="30_fvsjb"]
 [ext_resource type="Script" uid="uid://cobt3ev1mx4pm" path="res://scripts/win_screen.gd" id="31_n4i7c"]
+[ext_resource type="Script" uid="uid://cofsbubyp6ucb" path="res://scripts/lightflicker.gd" id="33_0vrl8"]
 [ext_resource type="PackedScene" uid="uid://ddq3dpsgrvmfu" path="res://scenes/ui.tscn" id="36_ciptj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_15mv3"]
@@ -9759,6 +9760,7 @@ color = Color(0.9072204, 0.7505527, 0.50269324, 1)
 shadow_enabled = true
 texture = ExtResource("26_jdrep")
 texture_scale = 0.5
+script = ExtResource("33_0vrl8")
 
 [node name="PointLight2D2" type="PointLight2D" parent="Lighting/Lamps" unique_id=1706727731]
 position = Vector2(328, 25)
@@ -9766,15 +9768,7 @@ color = Color(0.9072204, 0.7505527, 0.50269324, 1)
 shadow_enabled = true
 texture = ExtResource("26_jdrep")
 texture_scale = 0.5
-
-[node name="PointLight2D6" type="PointLight2D" parent="Lighting/Lamps" unique_id=1678780877]
-visible = false
-position = Vector2(272, 18)
-scale = Vector2(0.4999997, 1.78)
-color = Color(0.47364497, 0.5385671, 0.5978367, 1)
-shadow_enabled = true
-texture = ExtResource("26_jdrep")
-texture_scale = 0.5
+script = ExtResource("33_0vrl8")
 
 [node name="PointLight2D3" type="PointLight2D" parent="Lighting/Lamps" unique_id=2111658469]
 position = Vector2(312, 104)
@@ -9789,28 +9783,11 @@ color = Color(0.9072204, 0.7505527, 0.50269324, 1)
 shadow_enabled = true
 texture = ExtResource("26_jdrep")
 texture_scale = 0.5
+script = ExtResource("33_0vrl8")
 
 [node name="PointLight2D5" type="PointLight2D" parent="Lighting/Lamps" unique_id=631564366]
 position = Vector2(457, 201)
 color = Color(0.9072204, 0.7505527, 0.50269324, 1)
-shadow_enabled = true
-texture = ExtResource("26_jdrep")
-texture_scale = 0.5
-
-[node name="PointLight2D7" type="PointLight2D" parent="Lighting/Lamps" unique_id=985453616]
-visible = false
-position = Vector2(368, 18)
-scale = Vector2(0.4999997, 1.78)
-color = Color(0.47364497, 0.5385671, 0.5978367, 1)
-shadow_enabled = true
-texture = ExtResource("26_jdrep")
-texture_scale = 0.5
-
-[node name="PointLight2D8" type="PointLight2D" parent="Lighting/Lamps" unique_id=174982646]
-visible = false
-position = Vector2(176, 18)
-scale = Vector2(0.4999997, 1.78)
-color = Color(0.47364497, 0.5385671, 0.5978367, 1)
 shadow_enabled = true
 texture = ExtResource("26_jdrep")
 texture_scale = 0.5

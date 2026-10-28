@@ -37,6 +37,7 @@
 [ext_resource type="Script" uid="uid://bgraubf16q2oj" path="res://scripts/pause_menu.gd" id="29_iw4em"]
 [ext_resource type="Script" uid="uid://cobt3ev1mx4pm" path="res://scripts/win_screen.gd" id="29_mbb35"]
 [ext_resource type="PackedScene" uid="uid://ddq3dpsgrvmfu" path="res://scenes/ui.tscn" id="32_tdlki"]
+[ext_resource type="Script" uid="uid://cofsbubyp6ucb" path="res://scripts/lightflicker.gd" id="32_v8pws"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_15mv3"]
 texture = ExtResource("1_pa8r4")
@@ -9800,6 +9801,7 @@ color = Color(0.95144457, 0.73216957, 0.4081172, 1)
 shadow_enabled = true
 texture = ExtResource("24_x2fux")
 texture_scale = 0.5
+script = ExtResource("32_v8pws")
 
 [node name="PointLight2D2" type="PointLight2D" parent="Lighting/Lamps" unique_id=1824875564]
 position = Vector2(216, 25)
@@ -9821,6 +9823,7 @@ color = Color(0.95144457, 0.73216957, 0.4081172, 1)
 shadow_enabled = true
 texture = ExtResource("24_x2fux")
 texture_scale = 0.5
+script = ExtResource("32_v8pws")
 
 [node name="PointLight2D5" type="PointLight2D" parent="Lighting/Lamps" unique_id=482890691]
 position = Vector2(457, 138)
@@ -9842,6 +9845,7 @@ color = Color(0.95144457, 0.73216957, 0.4081172, 1)
 shadow_enabled = true
 texture = ExtResource("24_x2fux")
 texture_scale = 0.5
+script = ExtResource("32_v8pws")
 
 [node name="PointLight2D8" type="PointLight2D" parent="Lighting/Lamps" unique_id=1049608950]
 position = Vector2(168, 185)
@@ -9863,6 +9867,7 @@ color = Color(0.95144457, 0.73216957, 0.4081172, 1)
 shadow_enabled = true
 texture = ExtResource("24_x2fux")
 texture_scale = 0.5
+script = ExtResource("32_v8pws")
 
 [node name="CanvasLayers" type="Node2D" parent="." unique_id=968072778]
 

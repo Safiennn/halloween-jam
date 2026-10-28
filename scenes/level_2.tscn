@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://n75hajcnwuew" path="res://scenes/hunter.tscn" id="27_6jdxa"]
 [ext_resource type="Texture2D" uid="uid://cswr07x1ch8wx" path="res://assets/graphics/lights/main.png" id="28_gnx6a"]
 [ext_resource type="PackedScene" uid="uid://gso7w0focloj" path="res://scenes/post_fx.tscn" id="29_32olf"]
+[ext_resource type="Script" uid="uid://cofsbubyp6ucb" path="res://scripts/lightflicker.gd" id="30_rur20"]
 [ext_resource type="Script" uid="uid://ct6cq1cputf8r" path="res://scripts/death_screen.gd" id="30_s7a0h"]
 [ext_resource type="Theme" uid="uid://b6608y06wngqx" path="res://assets/fonts/new_theme.tres" id="31_qmoov"]
 [ext_resource type="Script" uid="uid://bgraubf16q2oj" path="res://scripts/pause_menu.gd" id="32_dtala"]
@@ -9775,6 +9776,7 @@ color = Color(0.6949896, 0.7715501, 0.9798959, 1)
 shadow_enabled = true
 texture = ExtResource("28_gnx6a")
 texture_scale = 0.5
+script = ExtResource("30_rur20")
 
 [node name="PointLight2D2" type="PointLight2D" parent="Lighting/Lamps" unique_id=1093200034]
 position = Vector2(408, 25)
@@ -9796,6 +9798,7 @@ color = Color(0.6949896, 0.7715501, 0.9798959, 1)
 shadow_enabled = true
 texture = ExtResource("28_gnx6a")
 texture_scale = 0.5
+script = ExtResource("30_rur20")
 
 [node name="PointLight2D5" type="PointLight2D" parent="Lighting/Lamps" unique_id=1717496901]
 position = Vector2(360, 201)
@@ -9803,6 +9806,7 @@ color = Color(0.6949896, 0.7715501, 0.9798959, 1)
 shadow_enabled = true
 texture = ExtResource("28_gnx6a")
 texture_scale = 0.5
+script = ExtResource("30_rur20")
 
 [node name="CanvasLayers" type="Node2D" parent="." unique_id=968072778]
 
