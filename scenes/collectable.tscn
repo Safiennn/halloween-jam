@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cmf12hfltyq8t" path="res://scripts/collectable.gd" id="1_dnya4"]
 [ext_resource type="Material" uid="uid://cao3pg021s7gm" path="res://assets/graphics/shaders/outline.tres" id="1_llfh3"]
 [ext_resource type="Texture2D" uid="uid://b51wpb3bnyyrj" path="res://assets/graphics/tilesets/modern_interiors/furniture/toys.png" id="2_dnya4"]
+[ext_resource type="AudioStream" uid="uid://q6ofc1ad8da8" path="res://assets/audio/sfx/pickup.wav" id="4_i8gcc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nht5g"]
 radius = 13.0
@@ -42,4 +43,10 @@ shadow_enabled = true
 shadow_filter = 1
 texture = SubResource("GradientTexture2D_dnya4")
 
+[node name="Pickup" type="AudioStreamPlayer2D" parent="." unique_id=1410965127]
+stream = ExtResource("4_i8gcc")
+volume_db = -5.0
+bus = &"SFX"
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="finished" from="Pickup" to="." method="_on_pickup_finished"]

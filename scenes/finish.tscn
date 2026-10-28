@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://mlca6pd2rh4o" path="res://scripts/finish.gd" id="1_07gpw"]
 [ext_resource type="Texture2D" uid="uid://b268242ah43uc" path="res://assets/graphics/tilesets/modern_interiors/building_blocks/doors_and_windows.png" id="2_07gpw"]
+[ext_resource type="AudioStream" uid="uid://ck1ydp7wherei" path="res://assets/audio/sfx/u_31vnwfmzt6-ding-126626.mp3" id="3_2pftv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_07gpw"]
 size = Vector2(38, 42)
@@ -28,5 +29,10 @@ collision_layer = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=850127766]
 position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_07gpw")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=126398179]
+stream = ExtResource("3_2pftv")
+volume_db = 3.0
+bus = &"SFX"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

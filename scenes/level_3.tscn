@@ -29,8 +29,10 @@
 [ext_resource type="Texture2D" uid="uid://byyoxft0oawap" path="res://assets/graphics/pc.png" id="25_365g5"]
 [ext_resource type="PackedScene" uid="uid://n75hajcnwuew" path="res://scenes/hunter.tscn" id="25_ddneo"]
 [ext_resource type="Texture2D" uid="uid://cswr07x1ch8wx" path="res://assets/graphics/lights/main.png" id="26_jdrep"]
+[ext_resource type="AudioStream" uid="uid://d4b3sjnbv0pbc" path="res://assets/audio/sfx/clock.wav" id="26_nhai6"]
 [ext_resource type="PackedScene" uid="uid://gso7w0focloj" path="res://scenes/post_fx.tscn" id="27_hkya4"]
 [ext_resource type="PackedScene" uid="uid://ckv54jpjdkvim" path="res://scenes/collectable.tscn" id="27_os8re"]
+[ext_resource type="AudioStream" uid="uid://1r1c3tgq1tt2" path="res://assets/audio/sfx/freesound_community-pc-speaker-error-beep-104100.mp3" id="28_0vrl8"]
 [ext_resource type="Script" uid="uid://ct6cq1cputf8r" path="res://scripts/death_screen.gd" id="28_e8wht"]
 [ext_resource type="Theme" uid="uid://b6608y06wngqx" path="res://assets/fonts/new_theme.tres" id="29_22ac7"]
 [ext_resource type="Script" uid="uid://bgraubf16q2oj" path="res://scripts/pause_menu.gd" id="30_fvsjb"]
@@ -9675,8 +9677,9 @@ flicker_speed = 0.05
 scare_radius = 75.19
 
 [node name="Clock" parent="Objects/PossessableObjects" unique_id=493726952 instance=ExtResource("21_12f7l")]
-position = Vector2(200, 42)
+position = Vector2(200, 44)
 sprite_frames = SubResource("SpriteFrames_detxl")
+sound_fx = ExtResource("26_nhai6")
 noise_light_energy = 0.5
 noise_light_color = Color(0.69803923, 1, 1, 1)
 flicker_speed = 0.05
@@ -9685,6 +9688,7 @@ scare_radius = 75.19
 [node name="PC" parent="Objects/PossessableObjects" unique_id=1960895780 instance=ExtResource("21_12f7l")]
 position = Vector2(392, 128)
 sprite_frames = SubResource("SpriteFrames_58p72")
+sound_fx = ExtResource("28_0vrl8")
 noise_light_energy = 0.7
 noise_light_color = Color(0.023529412, 0.5176471, 1, 1)
 noise_light_flicker = true

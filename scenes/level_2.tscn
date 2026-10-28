@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://bt2muaptkxty5" path="res://assets/graphics/washingmachine.png" id="23_7egwj"]
 [ext_resource type="AudioStream" uid="uid://crx4rmi3pekg" path="res://assets/audio/sfx/bretbernhoft-microwave-oven-01-410907.wav" id="25_nquw4"]
 [ext_resource type="PackedScene" uid="uid://dbhm1foiyme4l" path="res://scenes/player.tscn" id="26_8ky4j"]
+[ext_resource type="AudioStream" uid="uid://dihh4wiug25ag" path="res://assets/audio/sfx/feedthestraycats-washing-machine-sound-354187.mp3" id="26_vwjju"]
 [ext_resource type="PackedScene" uid="uid://n75hajcnwuew" path="res://scenes/hunter.tscn" id="27_6jdxa"]
 [ext_resource type="Texture2D" uid="uid://cswr07x1ch8wx" path="res://assets/graphics/lights/main.png" id="28_gnx6a"]
 [ext_resource type="PackedScene" uid="uid://gso7w0focloj" path="res://scenes/post_fx.tscn" id="29_32olf"]
@@ -9699,6 +9700,7 @@ flicker_speed = 0.05
 z_index = 0
 position = Vector2(160, 49)
 sprite_frames = SubResource("SpriteFrames_365g5")
+sound_fx = ExtResource("26_vwjju")
 noise_light_energy = 0.5
 noise_light_color = Color(0.69803923, 1, 1, 1)
 noise_light_flicker = true
@@ -9709,6 +9711,7 @@ scare_radius = 75.19
 z_index = 0
 position = Vector2(240, 225)
 sprite_frames = SubResource("SpriteFrames_365g5")
+sound_fx = ExtResource("26_vwjju")
 noise_light_energy = 0.5
 noise_light_color = Color(0.69803923, 1, 1, 1)
 noise_light_flicker = true

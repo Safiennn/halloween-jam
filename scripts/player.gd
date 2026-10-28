@@ -43,9 +43,12 @@ func _physics_process(delta: float) -> void:
 		get_input(delta)
 		move_and_slide()
 	
-	if Input.is_action_just_pressed("make_noise") and is_possessing and $Timer.is_stopped():
-		possessed_object.make_noise()
-		$Timer.start()
+	if Input.is_action_just_pressed("make_noise") and is_possessing:
+		if $Timer.is_stopped():
+			possessed_object.make_noise()
+			$Timer.start()
+		else:
+			$ScareNotReady.play()
 
 # Hide the player and set velocity to 0 so the player doesn't drift off when leaving.
 # Save nearby object into possessed_object variable so leaving still works even if nearby_object changes while inside.
