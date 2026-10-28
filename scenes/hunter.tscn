@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://ds1rrfc4fqq6i" path="res://assets/graphics/shadow.png" id="3_amnbx"]
 [ext_resource type="Material" uid="uid://cao3pg021s7gm" path="res://assets/graphics/shaders/outline.tres" id="4_aso1i"]
 [ext_resource type="Texture2D" uid="uid://mgvb4ue1p5kq" path="res://assets/graphics/lights/cone_e_blur.png" id="4_h7gi6"]
+[ext_resource type="Texture2D" uid="uid://dcfpa6vsbnfpu" path="res://assets/graphics/!.png" id="6_waq3h"]
+[ext_resource type="AudioStream" uid="uid://b33xgd8k7u45j" path="res://assets/audio/sfx/yell.wav" id="7_lmlo1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oj040"]
 radius = 6.0
@@ -73,5 +75,19 @@ shadow_enabled = true
 shadow_filter = 1
 texture = SubResource("GradientTexture2D_kr1wx")
 
+[node name="ScaredTimer" type="Timer" parent="." unique_id=1219520599]
+one_shot = true
+
+[node name="!" type="Sprite2D" parent="." unique_id=433799019]
+visible = false
+position = Vector2(0, -26)
+texture = ExtResource("6_waq3h")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=563793892]
+stream = ExtResource("7_lmlo1")
+volume_db = 8.0
+bus = &"SFX"
+
 [connection signal="body_entered" from="Flashlight/DetectionRange" to="." method="_on_detection_range_body_entered"]
 [connection signal="body_exited" from="Flashlight/DetectionRange" to="." method="_on_detection_range_body_exited"]
+[connection signal="timeout" from="ScaredTimer" to="." method="_on_scared_timer_timeout"]

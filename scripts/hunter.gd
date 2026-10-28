@@ -9,6 +9,7 @@ extends CharacterBody2D
 var active_marker = 0
 var direction = 1
 var ghost = null
+var is_frozen : bool = false
 
 func _ready() -> void:
 	$Sprite2D.material.set_shader_parameter("width", 0)
@@ -32,17 +33,23 @@ func _physics_process(_delta: float) -> void:
 			direction = +1
 		# Move the hunter to the next marker.
 		active_marker += direction
+		$Flashlight.rotation = global_position.direction_to(markers[active_marker].global_position).angle()
+		$Flashlight.show()
+		$Flashlight/DetectionRange.monitoring = true
+		speed = 20.0
+		
 		
 	
 	# Make the hunter move towards the active marker.
 	else:
-		velocity = global_position.direction_to(markers[active_marker].global_position) * speed
-		move_and_slide()
-		if velocity.x > 0:
-			$Sprite2D.flip_h = false
-		else:
-			$Sprite2D.flip_h = true
-		$Flashlight.rotation = velocity.angle()
+		if is_frozen == false:
+			velocity = global_position.direction_to(markers[active_marker].global_position) * speed
+			move_and_slide()
+			if velocity.x > 0:
+				$Sprite2D.flip_h = false
+			else:
+				$Sprite2D.flip_h = true
+			$Flashlight.rotation = velocity.angle()
 		
 	if ghost:
 		$Flashlight/RayCast2D.target_position = $Flashlight/RayCast2D.to_local(ghost.global_position)
@@ -51,11 +58,19 @@ func _physics_process(_delta: float) -> void:
 			ghost.play_death_sound()
 			get_tree().paused = true
 			$"../../CanvasLayers/Death Screen".show()
+	
 
 func get_scared():
+	$"!".show()
+	speed = 50.0
 	direction *= -1
 	active_marker += direction
-
+	is_frozen = true
+	$ScaredTimer.start()
+	$Flashlight.hide()
+	$Flashlight/DetectionRange.monitoring = false
+	show_outline()
+	$AudioStreamPlayer2D.play()
 
 func _on_detection_range_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
@@ -72,3 +87,9 @@ func show_outline():
 
 func hide_outline():
 	$Sprite2D.material.set_shader_parameter("width", 0)
+
+
+func _on_scared_timer_timeout() -> void:
+	is_frozen = false
+	$"!".hide()
+	
