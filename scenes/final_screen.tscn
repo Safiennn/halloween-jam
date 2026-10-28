@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://degqqlyio7dsa"]
+
+[ext_resource type="Script" uid="uid://df0r4qgbsclmx" path="res://scripts/final_screen.gd" id="1_lhaix"]
+[ext_resource type="Theme" uid="uid://b6608y06wngqx" path="res://assets/fonts/new_theme.tres" id="2_bbqai"]
+
+[node name="Final Win Screen" type="CanvasLayer" unique_id=1660364760]
+process_mode = 3
+script = ExtResource("1_lhaix")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=336189425]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.16078432, 0.16078432, 0.16078432, 0.6627451)
+
+[node name="Label" type="Label" parent="." unique_id=1366767435]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -63.0
+offset_top = 103.0
+offset_right = 63.0
+offset_bottom = 131.0
+grow_horizontal = 2
+offset_transform_enabled = true
+theme = ExtResource("2_bbqai")
+theme_override_colors/font_shadow_color = Color(0.91764706, 0.31764707, 0.07058824, 0.7294118)
+text = "You won!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QuitButton" type="Button" parent="." unique_id=461477001]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -22.0
+offset_top = -114.0
+offset_right = 22.0
+offset_bottom = -92.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_bbqai")
+theme_override_font_sizes/font_size = 16
+text = "BACK TO MENU"
+
+[connection signal="mouse_entered" from="QuitButton" to="." method="_on_quit_button_mouse_entered"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

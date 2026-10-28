@@ -9708,7 +9708,7 @@ scare_radius = 75.19
 
 [node name="Player" parent="Entities" unique_id=1373740912 instance=ExtResource("26_8ky4j")]
 z_index = 100
-position = Vector2(360, 53)
+position = Vector2(425, 68)
 
 [node name="Hunter" parent="Entities" unique_id=1514925568 node_paths=PackedStringArray("markers") instance=ExtResource("27_6jdxa")]
 position = Vector2(112, 245)

@@ -9719,7 +9719,7 @@ flicker_speed = 0.05
 
 [node name="Player" parent="Entities" unique_id=1373740912 instance=ExtResource("5_go7sj")]
 z_index = 100
-position = Vector2(378, 47)
+position = Vector2(65, 61)
 
 [node name="Hunter" parent="Entities" unique_id=1514925568 node_paths=PackedStringArray("markers") instance=ExtResource("6_7gny6")]
 position = Vector2(162, 152)

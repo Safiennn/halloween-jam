@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b4muqdffxwo8w" path="res://scripts/level.gd" id="1_detxl"]
 [ext_resource type="Texture2D" uid="uid://c8bx0vusij63e" path="res://assets/graphics/tilesets/modern_interiors/building_blocks/walls_and_floors.png" id="2_58p72"]
+[ext_resource type="PackedScene" uid="uid://degqqlyio7dsa" path="res://scenes/final_screen.tscn" id="2_50287"]
 [ext_resource type="Texture2D" uid="uid://c3b5txcg201ww" path="res://assets/graphics/tilesets/modern_interiors/furniture/rugs.png" id="3_365g5"]
 [ext_resource type="Texture2D" uid="uid://ck0kaf32f54gy" path="res://assets/graphics/tilesets/modern_interiors/furniture/kitchen.png" id="4_50287"]
 [ext_resource type="Texture2D" uid="uid://curgjd8vy2eod" path="res://assets/graphics/tilesets/modern_interiors/furniture/boards.png" id="5_os8re"]
@@ -9627,6 +9628,7 @@ animations = [{
 
 [node name="Level2" type="Node2D" unique_id=1780577006]
 script = ExtResource("1_detxl")
+next_level = ExtResource("2_50287")
 
 [node name="TileMaps" type="Node2D" parent="." unique_id=1365566133]
 
@@ -9656,7 +9658,7 @@ tile_set = SubResource("TileSet_iw4em")
 [node name="Objects" type="Node2D" parent="." unique_id=1533293668]
 
 [node name="Finish" parent="Objects" unique_id=1692256549 instance=ExtResource("20_kmaj6")]
-position = Vector2(-57, 124)
+position = Vector2(288, 112)
 
 [node name="PossessableObjects" type="Node2D" parent="Objects" unique_id=1881689694]
 
@@ -9692,7 +9694,7 @@ scare_radius = 75.19
 
 [node name="Player" parent="Entities" unique_id=1373740912 instance=ExtResource("24_04pdi")]
 z_index = 100
-position = Vector2(368, 144)
+position = Vector2(57, 222)
 
 [node name="Hunter" parent="Entities" unique_id=1514925568 node_paths=PackedStringArray("markers") instance=ExtResource("25_ddneo")]
 position = Vector2(223, 85)
