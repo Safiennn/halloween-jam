@@ -11,9 +11,11 @@ extends Node2D
 @export var scare_radius : float = 50.0
 var flicker_tween : Tween
 var is_possessed : bool = false
+var scare_volume
 
 
 func _ready() -> void:
+	scare_volume = $SoundFX.volume_db
 	$NoiseRange/CollisionShape2D.shape.radius = scare_radius
 	$AnimatedSprite2D.sprite_frames = sprite_frames
 	$SoundFX.stream = sound_fx
@@ -62,6 +64,7 @@ func stop_noise():
 	tween.tween_property($SoundFX, "volume_db", -40, 0.4)
 	await tween.finished
 	$SoundFX.stop()
+	$SoundFX.volume_db = scare_volume
 	if flicker_tween:
 		flicker_tween.kill()
 
