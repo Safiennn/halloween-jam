@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://ddq3dpsgrvmfu"]
 
+[ext_resource type="Script" uid="uid://dgpw62hscyw2i" path="res://scripts/ui.gd" id="1_gdt2y"]
 [ext_resource type="Theme" uid="uid://b6608y06wngqx" path="res://assets/fonts/new_theme.tres" id="1_yev5y"]
 [ext_resource type="Shader" uid="uid://b8l1uqfjx2esy" path="res://assets/graphics/shaders/outline.gdshader" id="2_gdt2y"]
 [ext_resource type="Texture2D" uid="uid://b51wpb3bnyyrj" path="res://assets/graphics/tilesets/modern_interiors/furniture/toys.png" id="3_wm3ai"]
@@ -15,6 +16,7 @@ shader_parameter/add_margins = false
 shader_parameter/number_of_images = Vector2(1, 1)
 
 [node name="UI" type="CanvasLayer" unique_id=640032260]
+script = ExtResource("1_gdt2y")
 
 [node name="Label" type="Label" parent="." unique_id=34829643]
 offset_left = 32.0
@@ -33,3 +35,16 @@ position = Vector2(27, 24)
 texture = ExtResource("3_wm3ai")
 region_enabled = true
 region_rect = Rect2(112, 17, 16, 16)
+
+[node name="TimeLabel" type="Label" parent="." unique_id=2141093667]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -61.0
+offset_top = 241.0
+offset_right = -21.0
+offset_bottom = 264.0
+grow_horizontal = 0
+theme = ExtResource("1_yev5y")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16

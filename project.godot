@@ -23,6 +23,7 @@ general/default_playback_type.web=0
 [autoload]
 
 Audio="*uid://bq6mivyp8eso2"
+Run="*uid://c3imvb4o3eojn"
 
 [display]
 

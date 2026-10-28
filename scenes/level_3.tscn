@@ -9764,6 +9764,7 @@ texture = ExtResource("26_jdrep")
 texture_scale = 0.5
 
 [node name="PointLight2D6" type="PointLight2D" parent="Lighting/Lamps" unique_id=1678780877]
+visible = false
 position = Vector2(272, 18)
 scale = Vector2(0.4999997, 1.78)
 color = Color(0.47364497, 0.5385671, 0.5978367, 1)
@@ -9793,6 +9794,7 @@ texture = ExtResource("26_jdrep")
 texture_scale = 0.5
 
 [node name="PointLight2D7" type="PointLight2D" parent="Lighting/Lamps" unique_id=985453616]
+visible = false
 position = Vector2(368, 18)
 scale = Vector2(0.4999997, 1.78)
 color = Color(0.47364497, 0.5385671, 0.5978367, 1)
@@ -9801,6 +9803,7 @@ texture = ExtResource("26_jdrep")
 texture_scale = 0.5
 
 [node name="PointLight2D8" type="PointLight2D" parent="Lighting/Lamps" unique_id=174982646]
+visible = false
 position = Vector2(176, 18)
 scale = Vector2(0.4999997, 1.78)
 color = Color(0.47364497, 0.5385671, 0.5978367, 1)

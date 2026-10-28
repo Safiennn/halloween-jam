@@ -10,6 +10,8 @@ func _on_quit_button_pressed() -> void:
 
 
 func _on_start_button_pressed() -> void:
+	Run.run_time = 0.0
+	Run.is_running = true
 	Audio.play_click()
 	get_tree().change_scene_to_file("res://scenes/level_1.tscn")
 

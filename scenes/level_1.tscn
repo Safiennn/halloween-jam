@@ -9724,7 +9724,7 @@ position = Vector2(64, 205)
 position = Vector2(180, 238)
 
 [node name="Collectable3" parent="Objects" unique_id=635309447 instance=ExtResource("28_q0ron")]
-position = Vector2(422, 241)
+position = Vector2(288, 235)
 
 [node name="Collectable4" parent="Objects" unique_id=1154777769 instance=ExtResource("28_q0ron")]
 position = Vector2(257, 74)
@@ -10052,6 +10052,7 @@ theme_override_font_sizes/font_size = 16
 text = "NEXT LEVEL"
 
 [node name="PointLight2D6" type="PointLight2D" parent="." unique_id=831609325]
+visible = false
 position = Vector2(255.99998, 18)
 scale = Vector2(0.4999997, 1.78)
 color = Color(0.47364497, 0.5385671, 0.5978367, 1)
@@ -10060,6 +10061,7 @@ texture = ExtResource("24_x2fux")
 texture_scale = 0.5
 
 [node name="PointLight2D7" type="PointLight2D" parent="." unique_id=461361356]
+visible = false
 position = Vector2(175.99998, 18)
 scale = Vector2(0.4999997, 1.78)
 color = Color(0.47364497, 0.5385671, 0.5978367, 1)
@@ -10068,6 +10070,7 @@ texture = ExtResource("24_x2fux")
 texture_scale = 0.5
 
 [node name="PointLight2D8" type="PointLight2D" parent="." unique_id=1615521939]
+visible = false
 position = Vector2(336, 18)
 scale = Vector2(0.4999997, 1.78)
 color = Color(0.47364497, 0.5385671, 0.5978367, 1)
@@ -10076,6 +10079,7 @@ texture = ExtResource("24_x2fux")
 texture_scale = 0.5
 
 [node name="PointLight2D9" type="PointLight2D" parent="." unique_id=530635326]
+visible = false
 position = Vector2(47.999985, 18)
 scale = Vector2(0.4999997, 1.78)
 color = Color(0.47364497, 0.5385671, 0.5978367, 1)
