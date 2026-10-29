@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bgraubf16q2oj" path="res://scripts/pause_menu.gd" id="1_myx47"]
 [ext_resource type="Theme" uid="uid://b6608y06wngqx" path="res://assets/fonts/new_theme.tres" id="2_kukqi"]
 [ext_resource type="Theme" uid="uid://tvt58xafhyma" path="res://buttons.tres" id="3_kukqi"]
+[ext_resource type="PackedScene" uid="uid://ckilg40y5dg3k" path="res://scenes/volume_slider.tscn" id="4_5d2l8"]
 
 [node name="Pause Menu" type="CanvasLayer" unique_id=1306519118]
 process_mode = 3
@@ -82,6 +83,8 @@ grow_vertical = 0
 theme = ExtResource("3_kukqi")
 theme_override_font_sizes/font_size = 16
 text = "CONTINUE"
+
+[node name="VolumeSlider" parent="." unique_id=1785482584 instance=ExtResource("4_5d2l8")]
 
 [connection signal="mouse_entered" from="QuitButton" to="." method="_on_quit_button_mouse_entered"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

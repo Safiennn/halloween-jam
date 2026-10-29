@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://ckilg40y5dg3k"]
+
+[ext_resource type="Texture2D" uid="uid://sjcg2bjqt267" path="res://assets/graphics/volumeslider.png" id="1_4v2uo"]
+[ext_resource type="Script" uid="uid://lyqhogwihu8r" path="res://scripts/volume_slider.gd" id="1_ynsfn"]
+[ext_resource type="Theme" uid="uid://b6608y06wngqx" path="res://assets/fonts/new_theme.tres" id="2_1snrh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4v2uo"]
+content_margin_top = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(0.09019608, 0.06666667, 0.039215688, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.58431375, 0.21960784, 0.06666667, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ggm58"]
+content_margin_top = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(0.70980394, 0.27450982, 0.09411765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1snrh"]
+content_margin_top = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(0.8156863, 0.34117648, 0.12156863, 1)
+
+[node name="VolumeSlider" type="HSlider" unique_id=1785482584]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -30.0
+offset_right = 135.0
+offset_bottom = -14.0
+grow_vertical = 0
+theme_override_icons/grabber = ExtResource("1_4v2uo")
+theme_override_icons/grabber_highlight = ExtResource("1_4v2uo")
+theme_override_styles/slider = SubResource("StyleBoxFlat_4v2uo")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_ggm58")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_1snrh")
+max_value = 1.0
+step = 0.01
+script = ExtResource("1_ynsfn")
+
+[node name="Label" type="Label" parent="." unique_id=98566712]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -115.0
+offset_top = -15.0
+offset_right = -60.0
+offset_bottom = 8.0
+grow_horizontal = 0
+theme = ExtResource("2_1snrh")
+theme_override_colors/font_shadow_color = Color(0.91764706, 0.31764707, 0.07058824, 0.7294118)
+theme_override_font_sizes/font_size = 16
+text = "Volume: "
+
+[connection signal="value_changed" from="." to="." method="_on_value_changed"]

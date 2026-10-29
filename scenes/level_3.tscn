@@ -6234,6 +6234,7 @@ animations = [{
 
 [node name="Level2" type="Node2D" unique_id=1780577006]
 script = ExtResource("1_detxl")
+music_effect = 1
 next_level = ExtResource("2_50287")
 
 [node name="TileMaps" type="Node2D" parent="." unique_id=1365566133]

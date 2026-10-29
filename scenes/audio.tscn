@@ -9,6 +9,7 @@ process_mode = 3
 stream = ExtResource("1_6n3bj")
 volume_db = -20.0
 autoplay = true
+bus = &"Music"
 script = ExtResource("2_bwtr5")
 
 [node name="Click" type="AudioStreamPlayer" parent="." unique_id=950428051]

@@ -12,6 +12,10 @@ func _ready() -> void:
 		$BestTimeLabel.text = "Record: " + "%d:%05.2f" % [ int(Run.best_time / 60) , fmod(Run.best_time, 60) ]
 	else:
 		$BestTimeLabel.hide()
+	
+	var bus = AudioServer.get_bus_index("Music")
+	for i in AudioServer.get_bus_effect_count(bus):
+		AudioServer.set_bus_effect_enabled(bus, i, false)
 
 
 func _on_quit_button_pressed() -> void:

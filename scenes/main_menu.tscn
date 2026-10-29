@@ -4,6 +4,7 @@
 [ext_resource type="Theme" uid="uid://b6608y06wngqx" path="res://assets/fonts/new_theme.tres" id="1_l6cm7"]
 [ext_resource type="Texture2D" uid="uid://cbr205raaqbfk" path="res://assets/graphics/main_background.png" id="2_wu84c"]
 [ext_resource type="Theme" uid="uid://tvt58xafhyma" path="res://buttons.tres" id="3_bqqt6"]
+[ext_resource type="PackedScene" uid="uid://ckilg40y5dg3k" path="res://scenes/volume_slider.tscn" id="5_8ln24"]
 
 [node name="Main Menu" type="CanvasLayer" unique_id=217471371]
 process_mode = 3
@@ -112,6 +113,8 @@ grow_horizontal = 0
 theme = ExtResource("1_l6cm7")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 16
+
+[node name="VolumeSlider" parent="." unique_id=1785482584 instance=ExtResource("5_8ln24")]
 
 [connection signal="mouse_entered" from="QuitButton" to="." method="_on_quit_button_mouse_entered"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
