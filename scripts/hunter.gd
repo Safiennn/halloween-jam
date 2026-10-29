@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @export var speed : float = 20.0
+@export var marker_wait_time : float = 0.0
 
 # Store route markers in a list
 @export var markers : Array[Marker2D]
@@ -41,13 +42,14 @@ func _physics_process(_delta: float) -> void:
 		turn_amount = abs(turn)
 		var tween = create_tween()
 		tween.tween_property($Flashlight, "rotation", $Flashlight.rotation + turn, turn_time)
-		if turn_time > 0:
+		var total_wait_time = turn_time + marker_wait_time
+		if total_wait_time > 0:
 			is_waiting = true
-			$WaitTimer.start(turn_time)
+			$WaitTimer.start(total_wait_time)
 		else:
 			$Flashlight.show()
 			$Flashlight/DetectionRange.monitoring = true
-		speed = 20.0
+		speed = 25.0
 		
 	# Make the hunter move towards the active marker.
 	else:

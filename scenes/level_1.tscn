@@ -6286,7 +6286,7 @@ position = Vector2(180, 238)
 position = Vector2(288, 235)
 
 [node name="Collectable4" parent="Objects" unique_id=1154777769 instance=ExtResource("28_q0ron")]
-position = Vector2(175, 74)
+position = Vector2(219, 74)
 
 [node name="Entities" type="Node2D" parent="." unique_id=1910410418]
 
@@ -6300,6 +6300,7 @@ markers = [NodePath("../../HunterRoutes/Hunter1/Marker2D3"), NodePath("../../Hun
 
 [node name="Hunter2" parent="Entities" unique_id=696540794 node_paths=PackedStringArray("markers") instance=ExtResource("6_7gny6")]
 position = Vector2(227, 84)
+marker_wait_time = 1.0
 markers = [NodePath("../../HunterRoutes/Hunter2/Marker2D"), NodePath("../../HunterRoutes/Hunter2/Marker2D2")]
 
 [node name="Hunter3" parent="Entities" unique_id=1154382151 node_paths=PackedStringArray("markers") instance=ExtResource("6_7gny6")]

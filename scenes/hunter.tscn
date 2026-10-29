@@ -46,12 +46,12 @@ position = Vector2(0, -8)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Flashlight/DetectionRange" unique_id=1873421170]
 scale = Vector2(1.6458333, 1)
-polygon = PackedVector2Array(34.02532, 32, 34.02532, -32, 0, 0)
+polygon = PackedVector2Array(43.746838, 48, 43.746838, -48, 0, 0)
 
 [node name="PointLight2D" type="PointLight2D" parent="Flashlight" unique_id=1935926103]
-position = Vector2(-0.0016056, -0.0183426)
+position = Vector2(-0.026412554, 0.03749132)
 rotation = 1.5707964
-scale = Vector2(1.562514, 1.0921159)
+scale = Vector2(1.8787898, 1.4021726)
 shadow_enabled = true
 texture = ExtResource("4_h7gi6")
 offset = Vector2(0, -25.68)
