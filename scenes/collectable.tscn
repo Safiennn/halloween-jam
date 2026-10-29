@@ -34,7 +34,6 @@ z_index = 1000
 texture_filter = 2
 color = Color(0.6039216, 1, 1, 1)
 energy = 0.5
-shadow_enabled = true
 shadow_filter = 1
 texture = SubResource("GradientTexture2D_dnya4")
 

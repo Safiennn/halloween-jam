@@ -37,6 +37,7 @@ offset_top = 0.009994507
 offset_right = 0.23999023
 offset_bottom = 0.11998749
 grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 4
 offset_transform_enabled = true
 theme = ExtResource("1_l6cm7")
