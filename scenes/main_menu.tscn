@@ -2,10 +2,21 @@
 
 [ext_resource type="Script" uid="uid://b78o583vvxyfv" path="res://scripts/main_menu.gd" id="1_ekxnf"]
 [ext_resource type="Theme" uid="uid://b6608y06wngqx" path="res://assets/fonts/new_theme.tres" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://v6w38jkwaxpm" path="res://assets/graphics/Screenshot_20261029_135806.png" id="2_wu84c"]
+[ext_resource type="Theme" uid="uid://tvt58xafhyma" path="res://buttons.tres" id="3_bqqt6"]
 
 [node name="Main Menu" type="CanvasLayer" unique_id=217471371]
 process_mode = 3
 script = ExtResource("1_ekxnf")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=740094302]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_wu84c")
+expand_mode = 1
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1529197256]
 anchors_preset = 15
@@ -13,22 +24,26 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.15487596, 0.154876, 0.15487596, 1)
+color = Color(0, 0, 0, 0.3372549)
 
-[node name="Label" type="Label" parent="." unique_id=2055798244]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -90.0
-offset_top = 64.0
-offset_right = 90.0
-offset_bottom = 120.0
+[node name="Label" type="RichTextLabel" parent="." unique_id=666271218]
+anchors_preset = -1
+anchor_left = 0.312
+anchor_top = 0.23700002
+anchor_right = 0.7140834
+anchor_bottom = 0.44400004
+offset_left = 0.23999023
+offset_top = 0.009994507
+offset_right = 0.23999023
+offset_bottom = 0.11998749
 grow_horizontal = 2
+size_flags_horizontal = 4
 offset_transform_enabled = true
 theme = ExtResource("1_l6cm7")
 theme_override_colors/font_shadow_color = Color(0.91764706, 0.31764707, 0.07058824, 0.7294118)
-theme_override_font_sizes/font_size = 64
-text = "SPOOK"
+theme_override_constants/shadow_outline_size = 2
+bbcode_enabled = true
+text = "[wave amp=20 freq=5]SPOOK[/wave]"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -38,13 +53,13 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -22.0
-offset_top = -92.0
-offset_right = 22.0
-offset_bottom = -70.0
+offset_left = -39.0
+offset_top = -95.0
+offset_right = 39.0
+offset_bottom = -73.0
 grow_horizontal = 2
 grow_vertical = 0
-theme = ExtResource("1_l6cm7")
+theme = ExtResource("3_bqqt6")
 theme_override_font_sizes/font_size = 16
 text = "QUIT"
 
@@ -54,13 +69,13 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -22.0
-offset_top = -120.0
-offset_right = 22.0
-offset_bottom = -98.0
+offset_left = -39.0
+offset_top = -122.0
+offset_right = 39.0
+offset_bottom = -100.0
 grow_horizontal = 2
 grow_vertical = 0
-theme = ExtResource("1_l6cm7")
+theme = ExtResource("3_bqqt6")
 theme_override_font_sizes/font_size = 16
 text = "PLAY"
 

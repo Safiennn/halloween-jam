@@ -1,5 +1,8 @@
 extends CanvasLayer
 
+func _ready() -> void:
+	var tween = create_tween()
+	tween.tween_property($ColorRect, "modulate:a", 0.0, 0.7)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

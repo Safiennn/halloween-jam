@@ -31,13 +31,12 @@
 [ext_resource type="AudioStream" uid="uid://b1mi05etmmmqr" path="res://assets/audio/sfx/falsepiano.wav" id="24_hjqri"]
 [ext_resource type="AudioStream" uid="uid://crx4rmi3pekg" path="res://assets/audio/sfx/bretbernhoft-microwave-oven-01-410907.wav" id="24_nossa"]
 [ext_resource type="Texture2D" uid="uid://cswr07x1ch8wx" path="res://assets/graphics/lights/main.png" id="24_x2fux"]
-[ext_resource type="Script" uid="uid://ct6cq1cputf8r" path="res://scripts/death_screen.gd" id="27_k8ld0"]
-[ext_resource type="Theme" uid="uid://b6608y06wngqx" path="res://assets/fonts/new_theme.tres" id="27_mmfjm"]
 [ext_resource type="PackedScene" uid="uid://ckv54jpjdkvim" path="res://scenes/collectable.tscn" id="28_q0ron"]
-[ext_resource type="Script" uid="uid://bgraubf16q2oj" path="res://scripts/pause_menu.gd" id="29_iw4em"]
-[ext_resource type="Script" uid="uid://cobt3ev1mx4pm" path="res://scripts/win_screen.gd" id="29_mbb35"]
 [ext_resource type="PackedScene" uid="uid://ddq3dpsgrvmfu" path="res://scenes/ui.tscn" id="32_tdlki"]
 [ext_resource type="Script" uid="uid://cofsbubyp6ucb" path="res://scripts/lightflicker.gd" id="32_v8pws"]
+[ext_resource type="PackedScene" uid="uid://coxeeibx31gh8" path="res://scenes/death_screen.tscn" id="35_tdlki"]
+[ext_resource type="PackedScene" uid="uid://bi7id4j7kk51x" path="res://scenes/pause_menu.tscn" id="36_v8pws"]
+[ext_resource type="PackedScene" uid="uid://yxumc1jgkq38" path="res://scenes/win_screen.tscn" id="37_rscm6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_15mv3"]
 texture = ExtResource("1_pa8r4")
@@ -6221,7 +6220,7 @@ tile_map_data = PackedByteArray("AAACAAQAAAAGAAwAAAACAAUAAAAGAA0AAAADAAQAAAAHAAw
 tile_set = SubResource("TileSet_mbb35")
 
 [node name="Walls" type="TileMapLayer" parent="TileMaps" unique_id=580807545]
-tile_map_data = PackedByteArray("AAAAAAAAAAAQAAEAAAAAAAEAAAAPAAIAAAAAAAIAAAAPAAIAAAABAAAAAAASAB0AAAABAAEAAAARAB4AAAABAAIAAAARAB8AAAACAAAAAAATAB0AAAACAAEAAAATAB4AAAACAAIAAAATAB8AAAAGAAAAAAATAB0AAAAGAAEAAAATAB4AAAAGAAIAAAATAB8AAAALAAAAAAARAAMAAAALAAEAAAAEAC4AAAALAAIAAAAEAC8AAAAMAAAAAAARAAMAAAAMAAEAAAAEAC4AAAAMAAIAAAAEAC8AAAASAAAAAAATAAEAAAASAAEAAAAPAAIAAAASAAIAAAAPAAIAAAAWAAAAAAARAAMAAAAWAAEAAAAgAAYAAAAWAAIAAAAgAAcAAAAZAAAAAAARAAMAAAAHAAAAAAATAB0AAAAHAAEAAAAUAB4AAAAHAAIAAAAUAB8AAAAIAAAAAAATAAEAAAAIAAEAAAAPAAIAAAAIAAIAAAAPAAIAAAAJAAAAAAARAAMAAAAJAAEAAAADAC4AAAAJAAIAAAADAC8AAAAEAAAAAAATAB0AAAAEAAEAAAATAB4AAAAEAAIAAAATAB8AAAAPAAAAAAARAAMAAAAPAAEAAAAEAC4AAAAPAAIAAAAEAC8AAAARAAAAAAARAAMAAAARAAEAAAAGAC4AAAARAAIAAAAGAC8AAAAVAAAAAAARAAMAAAAVAAEAAAAgAAYAAAAVAAIAAAAgAAcAAAAaAAAAAAARAAMAAAAbAAAAAAARAAMAAAAKAAAAAAARAAMAAAAKAAEAAAAEAC4AAAAKAAIAAAAEAC8AAAAFAAAAAAATAB0AAAAFAAEAAAATAB4AAAAFAAIAAAATAB8AAAADAAAAAAATAB0AAAADAAEAAAATAB4AAAADAAIAAAATAB8AAAAOAAAAAAARAAMAAAAOAAEAAAAEAC4AAAAOAAIAAAAEAC8AAAANAAAAAAARAAMAAAANAAEAAAAEAC4AAAANAAIAAAAEAC8AAAAQAAAAAAARAAMAAAAQAAEAAAAEAC4AAAAQAAIAAAAEAC8AAAATAAAAAAARAAMAAAATAAEAAAAfAAYAAAATAAIAAAAfAAcAAAAUAAAAAAARAAMAAAAUAAEAAAAgAAYAAAAUAAIAAAAgAAcAAAAXAAAAAAARAAMAAAAXAAEAAAAgAAYAAAAXAAIAAAAgAAcAAAAYAAAAAAARAAMAAAAYAAIAAAAgAAcAAAAcAAAAAAARAAMAAAAcAAIAAAAiAAcAAAAdAAAAAAARAAEAAAAdAAEAAAAPAAIAAAAdAAIAAAAPAAIAAAAIAAUAAAARAAIAAAAIAAYAAAAGABIAAAAIAAcAAAAGABMAAAAIAAQAAAAPAAIAAAAIAAMAAAAPAAIAAAASAAQAAAAPAAIAAAASAAUAAAAPAAIAAAASAAYAAAAQAAIAAAASAAMAAAAPAAIAAAAdAAkAAAAPAAIAAAAdAAoAAAAPAAIAAAAdAAgAAAAUAAIAAAAdAAcAAAAPAAIAAAAdAAYAAAAPAAIAAAAdAAUAAAAPAAIAAAAdAAQAAAAPAAIAAAAdAAMAAAAPAAIAAAAEAAYAAAADABIAAAAEAAcAAAADABMAAAAAAAYAAAAPAAIAAAAAAAcAAAAPAAIAAAABAAYAAAAGABIAAAABAAcAAAAGABMAAAAEAAUAAAARAB0AAAAAAAUAAAASAAIAAAABAAUAAAAUAB0AAAAHAAUAAAATAB0AAAAGAAUAAAATAB0AAAAFAAUAAAATAB0AAAAAAAQAAAAPAAIAAAAAAAMAAAAPAAIAAAAFAAYAAAAEABIAAAAFAAcAAAAEABMAAAAGAAYAAAAEABIAAAAGAAcAAAAEABMAAAAHAAYAAAAEABIAAAAHAAcAAAAEABMAAAAAAAgAAAAPAAIAAAAAAAkAAAAPAAIAAAAAAAoAAAAPAAIAAAAAAAsAAAAPAAIAAAAAAAwAAAAPAAIAAAAAAA0AAAAPAAIAAAAAAA4AAAAPAAIAAAAAAA8AAAAPAAIAAAAAABAAAAAQAAIAAAAdABAAAAARAAIAAAAdAAsAAAAPAAIAAAAdAAwAAAAPAAIAAAAdAA0AAAAPAAIAAAAdAA4AAAAPAAIAAAAdAA8AAAAPAAIAAAABABAAAAARAAMAAAACABAAAAARAAMAAAADABAAAAARAAMAAAAEABAAAAARAAMAAAAFABAAAAARAAMAAAAGABAAAAARAAMAAAAHABAAAAARAAMAAAAIABAAAAATAAMAAAAJABAAAAARAAMAAAAKABAAAAARAAMAAAALABAAAAARAAMAAAAMABAAAAARAAMAAAANABAAAAARAAMAAAAOABAAAAARAAMAAAAPABAAAAATAAMAAAAQABAAAAARAAMAAAARABAAAAARAAMAAAASABAAAAARAAMAAAATABAAAAARAAMAAAAUABAAAAARAAMAAAAVABAAAAARAAMAAAAWABAAAAARAAMAAAAXABAAAAARAAMAAAAYABAAAAARAAMAAAAZABAAAAARAAMAAAAaABAAAAARAAMAAAAbABAAAAARAAMAAAAcABAAAAARAAMAAAAKAAoAAAARAAMAAAAPAAoAAAARAAEAAAAPAAsAAAAPAAIAAAAPAAwAAAAPAAIAAAAPAA0AAAAPAAIAAAAPAA4AAAAPAAIAAAAPAA8AAAAPAAIAAAAOAAoAAAAQAAMAAAALAAoAAAASAAMAAAAIAA8AAAAPAAIAAAAIAA4AAAAPAAIAAAAIAA0AAAAPAAIAAAAIAAwAAAAPAAIAAAAIAAsAAAAPAAIAAAAIAAoAAAAQAAEAAAAJAAoAAAARAAMAAAAJAAsAAAALAC4AAAAJAAwAAAALAC8AAAAOAAsAAAAKAC4AAAAOAAwAAAAKAC8AAAALAAsAAAANAC4AAAALAAwAAAANAC8AAAAKAAsAAAAMAC4AAAAKAAwAAAAMAC8AAAATAAYAAAARAAMAAAATAAcAAAAEAA4AAAAUAAYAAAARAAMAAAAUAAcAAAAEAA4AAAAVAAYAAAARAAMAAAAVAAcAAAAEAA4AAAAWAAYAAAARAAMAAAAWAAcAAAAEAA4AAAAXAAYAAAARAAMAAAAXAAcAAAAEAA4AAAAYAAYAAAASAAMAAAAYAAcAAAAGAA4AAAAbAAYAAAARAAUAAAAbAAcAAAADAA4AAAAcAAYAAAASAAUAAAAcAAcAAAAGAA4AAAAcAAgAAAAGAA8AAAAbAAgAAAADAA8AAAAYAAgAAAAGAA8AAAASAAcAAAADAA4AAAASAAgAAAADAA8AAAATAAgAAAAEAA8AAAAUAAgAAAAEAA8AAAAVAAgAAAAEAA8AAAAWAAgAAAAEAA8AAAAXAAgAAAAEAA8AAAAYAAEAAAAgAAYAAAAZAAEAAAAgAAYAAAAZAAIAAAAgAAcAAAAcAAEAAAAiAAYAAAAaAAEAAAATADYAAAAbAAEAAAATADYAAAAbAAIAAAATADYAAAAaAAIAAAATADYAAAA=")
+tile_map_data = PackedByteArray("AAAAAAAAAAAQAAEAAAAAAAEAAAAPAAIAAAAAAAIAAAAPAAIAAAABAAAAAAASAB0AAAABAAEAAAARAB4AAAABAAIAAAARAB8AAAACAAAAAAATAB0AAAACAAEAAAATAB4AAAACAAIAAAATAB8AAAAGAAAAAAATAB0AAAAGAAEAAAATAB4AAAAGAAIAAAATAB8AAAALAAAAAAARAAMAAAALAAEAAAAEAC4AAAALAAIAAAAEAC8AAAAMAAAAAAARAAMAAAAMAAEAAAAEAC4AAAAMAAIAAAAEAC8AAAASAAAAAAATAAEAAAASAAEAAAAPAAIAAAASAAIAAAAPAAIAAAAWAAAAAAARAAMAAAAWAAEAAAAgAAYAAAAWAAIAAAAgAAcAAAAZAAAAAAARAAMAAAAHAAAAAAATAB0AAAAHAAEAAAAUAB4AAAAHAAIAAAAUAB8AAAAIAAAAAAATAAEAAAAIAAEAAAAPAAIAAAAIAAIAAAAPAAIAAAAJAAAAAAARAAMAAAAJAAEAAAADAC4AAAAJAAIAAAADAC8AAAAEAAAAAAATAB0AAAAEAAEAAAATAB4AAAAEAAIAAAATAB8AAAAPAAAAAAARAAMAAAAPAAEAAAAEAC4AAAAPAAIAAAAEAC8AAAARAAAAAAARAAMAAAARAAEAAAAGAC4AAAARAAIAAAAGAC8AAAAVAAAAAAARAAMAAAAVAAEAAAAgAAYAAAAVAAIAAAAgAAcAAAAaAAAAAAARAAMAAAAbAAAAAAARAAMAAAAKAAAAAAARAAMAAAAKAAEAAAAEAC4AAAAKAAIAAAAEAC8AAAAFAAAAAAATAB0AAAAFAAEAAAATAB4AAAAFAAIAAAATAB8AAAADAAAAAAATAB0AAAADAAEAAAATAB4AAAADAAIAAAATAB8AAAAOAAAAAAARAAMAAAAOAAEAAAAEAC4AAAAOAAIAAAAEAC8AAAANAAAAAAARAAMAAAANAAEAAAAEAC4AAAANAAIAAAAEAC8AAAAQAAAAAAARAAMAAAAQAAEAAAAEAC4AAAAQAAIAAAAEAC8AAAATAAAAAAARAAMAAAATAAEAAAAfAAYAAAATAAIAAAAfAAcAAAAUAAAAAAARAAMAAAAUAAEAAAAgAAYAAAAUAAIAAAAgAAcAAAAXAAAAAAARAAMAAAAXAAEAAAAgAAYAAAAXAAIAAAAgAAcAAAAYAAAAAAARAAMAAAAYAAIAAAAgAAcAAAAcAAAAAAARAAMAAAAcAAIAAAAiAAcAAAAdAAAAAAARAAEAAAAdAAEAAAAPAAIAAAAdAAIAAAAPAAIAAAAIAAUAAAARAAIAAAAIAAYAAAAGABIAAAAIAAcAAAAGABMAAAAIAAQAAAAPAAIAAAAIAAMAAAAPAAIAAAASAAQAAAAPAAIAAAASAAUAAAAPAAIAAAASAAYAAAAQAAIAAAASAAMAAAAPAAIAAAAdAAkAAAAPAAIAAAAdAAoAAAAPAAIAAAAdAAgAAAAPAAIAAAAdAAcAAAAPAAIAAAAdAAYAAAAPAAIAAAAdAAUAAAAPAAIAAAAdAAQAAAAPAAIAAAAdAAMAAAAPAAIAAAAEAAYAAAADABIAAAAEAAcAAAADABMAAAAAAAYAAAAPAAIAAAAAAAcAAAAPAAIAAAABAAYAAAAGABIAAAABAAcAAAAGABMAAAAEAAUAAAARAB0AAAAAAAUAAAASAAIAAAABAAUAAAAUAB0AAAAHAAUAAAATAB0AAAAGAAUAAAATAB0AAAAFAAUAAAATAB0AAAAAAAQAAAAPAAIAAAAAAAMAAAAPAAIAAAAFAAYAAAAEABIAAAAFAAcAAAAEABMAAAAGAAYAAAAEABIAAAAGAAcAAAAEABMAAAAHAAYAAAAEABIAAAAHAAcAAAAEABMAAAAAAAgAAAAPAAIAAAAAAAkAAAAPAAIAAAAAAAoAAAAPAAIAAAAAAAsAAAAPAAIAAAAAAAwAAAAPAAIAAAAAAA0AAAAPAAIAAAAAAA4AAAAPAAIAAAAAAA8AAAAPAAIAAAAAABAAAAAQAAIAAAAdABAAAAARAAIAAAAdAAsAAAAPAAIAAAAdAAwAAAAPAAIAAAAdAA0AAAAPAAIAAAAdAA4AAAAPAAIAAAAdAA8AAAAPAAIAAAABABAAAAARAAMAAAACABAAAAARAAMAAAADABAAAAARAAMAAAAEABAAAAARAAMAAAAFABAAAAARAAMAAAAGABAAAAARAAMAAAAHABAAAAARAAMAAAAIABAAAAATAAMAAAAJABAAAAARAAMAAAAKABAAAAARAAMAAAALABAAAAARAAMAAAAMABAAAAARAAMAAAANABAAAAARAAMAAAAOABAAAAARAAMAAAAPABAAAAATAAMAAAAQABAAAAARAAMAAAARABAAAAARAAMAAAASABAAAAARAAMAAAATABAAAAARAAMAAAAUABAAAAARAAMAAAAVABAAAAARAAMAAAAWABAAAAARAAMAAAAXABAAAAARAAMAAAAYABAAAAARAAMAAAAZABAAAAARAAMAAAAaABAAAAARAAMAAAAbABAAAAARAAMAAAAcABAAAAARAAMAAAAKAAoAAAARAAMAAAAPAAoAAAARAAEAAAAPAAsAAAAPAAIAAAAPAAwAAAAPAAIAAAAPAA0AAAAPAAIAAAAPAA4AAAAPAAIAAAAPAA8AAAAPAAIAAAAOAAoAAAAQAAMAAAALAAoAAAASAAMAAAAIAA8AAAAPAAIAAAAIAA4AAAAPAAIAAAAIAA0AAAAPAAIAAAAIAAwAAAAPAAIAAAAIAAsAAAAPAAIAAAAIAAoAAAAQAAEAAAAJAAoAAAARAAMAAAAJAAsAAAALAC4AAAAJAAwAAAALAC8AAAAOAAsAAAAKAC4AAAAOAAwAAAAKAC8AAAALAAsAAAANAC4AAAALAAwAAAANAC8AAAAKAAsAAAAMAC4AAAAKAAwAAAAMAC8AAAATAAYAAAARAAMAAAATAAcAAAAEAA4AAAAUAAYAAAARAAMAAAAUAAcAAAAEAA4AAAAVAAYAAAARAAMAAAAVAAcAAAAEAA4AAAAWAAYAAAARAAMAAAAWAAcAAAAEAA4AAAAXAAYAAAARAAMAAAAXAAcAAAAEAA4AAAAYAAYAAAASAAMAAAAYAAcAAAAGAA4AAAAbAAYAAAARAAUAAAAbAAcAAAADAA4AAAAcAAYAAAASAAUAAAAcAAcAAAAGAA4AAAAcAAgAAAAGAA8AAAAbAAgAAAADAA8AAAAYAAgAAAAGAA8AAAASAAcAAAADAA4AAAASAAgAAAADAA8AAAATAAgAAAAEAA8AAAAUAAgAAAAEAA8AAAAVAAgAAAAEAA8AAAAWAAgAAAAEAA8AAAAXAAgAAAAEAA8AAAAYAAEAAAAgAAYAAAAZAAEAAAAgAAYAAAAZAAIAAAAgAAcAAAAcAAEAAAAiAAYAAAAaAAEAAAATADYAAAAbAAEAAAATADYAAAAbAAIAAAATADYAAAAaAAIAAAATADYAAAA=")
 tile_set = ExtResource("6_rscm6")
 
 [node name="WallDecor" type="TileMapLayer" parent="TileMaps" unique_id=1196236240]
@@ -6292,7 +6291,7 @@ position = Vector2(219, 74)
 
 [node name="Player" parent="Entities" unique_id=1373740912 instance=ExtResource("5_go7sj")]
 z_index = 100
-position = Vector2(50, 75)
+position = Vector2(48, 75)
 
 [node name="Hunter" parent="Entities" unique_id=1514925568 node_paths=PackedStringArray("markers") instance=ExtResource("6_7gny6")]
 position = Vector2(137, 152)
@@ -6429,188 +6428,11 @@ script = ExtResource("32_v8pws")
 
 [node name="VFX" parent="CanvasLayers" unique_id=2081556148 instance=ExtResource("8_6dial")]
 
-[node name="Death Screen" type="CanvasLayer" parent="CanvasLayers" unique_id=924113579]
-process_mode = 3
-visible = false
-script = ExtResource("27_k8ld0")
+[node name="Death Screen" parent="CanvasLayers" unique_id=892956134 instance=ExtResource("35_tdlki")]
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayers/Death Screen" unique_id=1891033447]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.16078432, 0.16078432, 0.16078432, 0.6627451)
+[node name="Pause Menu" parent="CanvasLayers" unique_id=1306519118 instance=ExtResource("36_v8pws")]
 
-[node name="Label" type="Label" parent="CanvasLayers/Death Screen" unique_id=2100804974]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -63.0
-offset_top = 103.0
-offset_right = 63.0
-offset_bottom = 131.0
-grow_horizontal = 2
-offset_transform_enabled = true
-theme = ExtResource("27_mmfjm")
-theme_override_colors/font_shadow_color = Color(0.91764706, 0.31764707, 0.07058824, 0.7294118)
-text = "You got caught!"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="QuitButton" type="Button" parent="CanvasLayers/Death Screen" unique_id=612628077]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -22.0
-offset_top = -92.0
-offset_right = 22.0
-offset_bottom = -70.0
-grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("27_mmfjm")
-theme_override_font_sizes/font_size = 16
-text = "QUIT"
-
-[node name="RetryButton" type="Button" parent="CanvasLayers/Death Screen" unique_id=1596238650]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -26.5
-offset_top = -120.0
-offset_right = 26.5
-offset_bottom = -98.0
-grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("27_mmfjm")
-theme_override_font_sizes/font_size = 16
-text = "RETRY"
-
-[node name="Pause Menu" type="CanvasLayer" parent="CanvasLayers" unique_id=972148623]
-process_mode = 3
-visible = false
-script = ExtResource("29_iw4em")
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayers/Pause Menu" unique_id=597429700]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.16078432, 0.16078432, 0.16078432, 0.6627451)
-
-[node name="Label" type="Label" parent="CanvasLayers/Pause Menu" unique_id=1440707759]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -63.0
-offset_top = 103.0
-offset_right = 63.0
-offset_bottom = 131.0
-grow_horizontal = 2
-offset_transform_enabled = true
-theme = ExtResource("27_mmfjm")
-theme_override_colors/font_shadow_color = Color(0.91764706, 0.31764707, 0.07058824, 0.7294118)
-text = "Paused"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="QuitButton" type="Button" parent="CanvasLayers/Pause Menu" unique_id=481331776]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -22.0
-offset_top = -63.0
-offset_right = 22.0
-offset_bottom = -41.0
-grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("27_mmfjm")
-theme_override_font_sizes/font_size = 16
-text = "QUIT"
-
-[node name="RetryButton" type="Button" parent="CanvasLayers/Pause Menu" unique_id=556870752]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -26.5
-offset_top = -91.0
-offset_right = 26.5
-offset_bottom = -69.0
-grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("27_mmfjm")
-theme_override_font_sizes/font_size = 16
-text = "RETRY"
-
-[node name="ContinueButton" type="Button" parent="CanvasLayers/Pause Menu" unique_id=1644896695]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -26.5
-offset_top = -120.0
-offset_right = 26.5
-offset_bottom = -98.0
-grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("27_mmfjm")
-theme_override_font_sizes/font_size = 16
-text = "CONTINUE"
-
-[node name="Win Screen" type="CanvasLayer" parent="CanvasLayers" unique_id=1341697784]
-process_mode = 3
-visible = false
-script = ExtResource("29_mbb35")
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayers/Win Screen" unique_id=666674564]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.16078432, 0.16078432, 0.16078432, 0.6627451)
-
-[node name="Label" type="Label" parent="CanvasLayers/Win Screen" unique_id=1205102850]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -63.0
-offset_top = 103.0
-offset_right = 63.0
-offset_bottom = 131.0
-grow_horizontal = 2
-offset_transform_enabled = true
-theme = ExtResource("27_mmfjm")
-theme_override_colors/font_shadow_color = Color(0.91764706, 0.31764707, 0.07058824, 0.7294118)
-text = "You escaped!"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="NextButton" type="Button" parent="CanvasLayers/Win Screen" unique_id=1346013782]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -26.5
-offset_top = -120.0
-offset_right = 26.5
-offset_bottom = -98.0
-grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("27_mmfjm")
-theme_override_font_sizes/font_size = 16
-text = "NEXT LEVEL"
+[node name="Win Screen" parent="CanvasLayers" unique_id=1502086316 instance=ExtResource("37_rscm6")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=452385211]
 position = Vector2(240, 135)
@@ -6618,16 +6440,3 @@ limit_left = 0
 limit_top = 0
 limit_right = 480
 limit_bottom = 272
-
-[connection signal="mouse_entered" from="CanvasLayers/Death Screen/QuitButton" to="CanvasLayers/Death Screen" method="_on_quit_button_mouse_entered"]
-[connection signal="pressed" from="CanvasLayers/Death Screen/QuitButton" to="CanvasLayers/Death Screen" method="_on_quit_button_pressed"]
-[connection signal="mouse_entered" from="CanvasLayers/Death Screen/RetryButton" to="CanvasLayers/Death Screen" method="_on_retry_button_mouse_entered"]
-[connection signal="pressed" from="CanvasLayers/Death Screen/RetryButton" to="CanvasLayers/Death Screen" method="_on_retry_button_pressed"]
-[connection signal="mouse_entered" from="CanvasLayers/Pause Menu/QuitButton" to="CanvasLayers/Pause Menu" method="_on_quit_button_mouse_entered"]
-[connection signal="pressed" from="CanvasLayers/Pause Menu/QuitButton" to="CanvasLayers/Pause Menu" method="_on_quit_button_pressed"]
-[connection signal="mouse_entered" from="CanvasLayers/Pause Menu/RetryButton" to="CanvasLayers/Pause Menu" method="_on_retry_button_mouse_entered"]
-[connection signal="pressed" from="CanvasLayers/Pause Menu/RetryButton" to="CanvasLayers/Pause Menu" method="_on_retry_button_pressed"]
-[connection signal="mouse_entered" from="CanvasLayers/Pause Menu/ContinueButton" to="CanvasLayers/Pause Menu" method="_on_continue_button_mouse_entered"]
-[connection signal="pressed" from="CanvasLayers/Pause Menu/ContinueButton" to="CanvasLayers/Pause Menu" method="_on_continue_button_pressed"]
-[connection signal="mouse_entered" from="CanvasLayers/Win Screen/NextButton" to="CanvasLayers/Win Screen" method="_on_next_button_mouse_entered"]
-[connection signal="pressed" from="CanvasLayers/Win Screen/NextButton" to="CanvasLayers/Win Screen" method="_on_next_button_pressed"]

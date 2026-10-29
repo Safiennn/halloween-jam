@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://coxeeibx31gh8"]
+
+[ext_resource type="Script" uid="uid://ct6cq1cputf8r" path="res://scripts/death_screen.gd" id="1_dwo6e"]
+[ext_resource type="Theme" uid="uid://b6608y06wngqx" path="res://assets/fonts/new_theme.tres" id="2_mqh5l"]
+[ext_resource type="Theme" uid="uid://tvt58xafhyma" path="res://buttons.tres" id="3_mqh5l"]
+
+[node name="Death Screen" type="CanvasLayer" unique_id=892956134]
+process_mode = 3
+visible = false
+script = ExtResource("1_dwo6e")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2071507252]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.3372549)
+
+[node name="Label" type="RichTextLabel" parent="." unique_id=1550501957]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -204.0
+offset_top = 64.0
+offset_right = 204.0
+offset_bottom = 120.0
+grow_horizontal = 2
+offset_transform_enabled = true
+theme = ExtResource("2_mqh5l")
+theme_override_colors/font_shadow_color = Color(0.91764706, 0.31764707, 0.07058824, 0.7294118)
+bbcode_enabled = true
+text = "[wave amp=20 freq=5]YOU GOT CAUGHT![/wave]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QuitButton" type="Button" parent="." unique_id=882438366]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -39.0
+offset_top = -95.0
+offset_right = 39.0
+offset_bottom = -73.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_mqh5l")
+theme_override_font_sizes/font_size = 16
+text = "QUIT"
+
+[node name="RetryButton" type="Button" parent="." unique_id=2059714653]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -39.0
+offset_top = -122.0
+offset_right = 39.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_mqh5l")
+theme_override_font_sizes/font_size = 16
+text = "RETRY"
+
+[connection signal="mouse_entered" from="QuitButton" to="." method="_on_quit_button_mouse_entered"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="mouse_entered" from="RetryButton" to="." method="_on_retry_button_mouse_entered"]
+[connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]

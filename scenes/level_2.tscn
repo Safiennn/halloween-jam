@@ -30,10 +30,9 @@
 [ext_resource type="Texture2D" uid="uid://cswr07x1ch8wx" path="res://assets/graphics/lights/main.png" id="28_gnx6a"]
 [ext_resource type="PackedScene" uid="uid://gso7w0focloj" path="res://scenes/post_fx.tscn" id="29_32olf"]
 [ext_resource type="Script" uid="uid://cofsbubyp6ucb" path="res://scripts/lightflicker.gd" id="30_rur20"]
-[ext_resource type="Script" uid="uid://ct6cq1cputf8r" path="res://scripts/death_screen.gd" id="30_s7a0h"]
-[ext_resource type="Theme" uid="uid://b6608y06wngqx" path="res://assets/fonts/new_theme.tres" id="31_qmoov"]
-[ext_resource type="Script" uid="uid://bgraubf16q2oj" path="res://scripts/pause_menu.gd" id="32_dtala"]
-[ext_resource type="Script" uid="uid://cobt3ev1mx4pm" path="res://scripts/win_screen.gd" id="33_fw1tk"]
+[ext_resource type="PackedScene" uid="uid://yxumc1jgkq38" path="res://scenes/win_screen.tscn" id="31_3buw8"]
+[ext_resource type="PackedScene" uid="uid://bi7id4j7kk51x" path="res://scenes/pause_menu.tscn" id="32_vwjju"]
+[ext_resource type="PackedScene" uid="uid://coxeeibx31gh8" path="res://scenes/death_screen.tscn" id="33_rur20"]
 [ext_resource type="PackedScene" uid="uid://ddq3dpsgrvmfu" path="res://scenes/ui.tscn" id="34_3buw8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_15mv3"]
@@ -6320,188 +6319,11 @@ script = ExtResource("30_rur20")
 
 [node name="VFX" parent="CanvasLayers" unique_id=2081556148 instance=ExtResource("29_32olf")]
 
-[node name="Death Screen" type="CanvasLayer" parent="CanvasLayers" unique_id=924113579]
-process_mode = 3
-visible = false
-script = ExtResource("30_s7a0h")
+[node name="Win Screen" parent="CanvasLayers" unique_id=1502086316 instance=ExtResource("31_3buw8")]
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayers/Death Screen" unique_id=1891033447]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.16078432, 0.16078432, 0.16078432, 0.6627451)
+[node name="Pause Menu" parent="CanvasLayers" unique_id=1306519118 instance=ExtResource("32_vwjju")]
 
-[node name="Label" type="Label" parent="CanvasLayers/Death Screen" unique_id=2100804974]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -63.0
-offset_top = 103.0
-offset_right = 63.0
-offset_bottom = 131.0
-grow_horizontal = 2
-offset_transform_enabled = true
-theme = ExtResource("31_qmoov")
-theme_override_colors/font_shadow_color = Color(0.91764706, 0.31764707, 0.07058824, 0.7294118)
-text = "You got caught!"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="QuitButton" type="Button" parent="CanvasLayers/Death Screen" unique_id=612628077]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -22.0
-offset_top = -92.0
-offset_right = 22.0
-offset_bottom = -70.0
-grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("31_qmoov")
-theme_override_font_sizes/font_size = 16
-text = "QUIT"
-
-[node name="RetryButton" type="Button" parent="CanvasLayers/Death Screen" unique_id=1596238650]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -26.5
-offset_top = -120.0
-offset_right = 26.5
-offset_bottom = -98.0
-grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("31_qmoov")
-theme_override_font_sizes/font_size = 16
-text = "RETRY"
-
-[node name="Pause Menu" type="CanvasLayer" parent="CanvasLayers" unique_id=972148623]
-process_mode = 3
-visible = false
-script = ExtResource("32_dtala")
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayers/Pause Menu" unique_id=597429700]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.16078432, 0.16078432, 0.16078432, 0.6627451)
-
-[node name="Label" type="Label" parent="CanvasLayers/Pause Menu" unique_id=1440707759]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -63.0
-offset_top = 103.0
-offset_right = 63.0
-offset_bottom = 131.0
-grow_horizontal = 2
-offset_transform_enabled = true
-theme = ExtResource("31_qmoov")
-theme_override_colors/font_shadow_color = Color(0.91764706, 0.31764707, 0.07058824, 0.7294118)
-text = "Paused"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="QuitButton" type="Button" parent="CanvasLayers/Pause Menu" unique_id=481331776]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -22.0
-offset_top = -63.0
-offset_right = 22.0
-offset_bottom = -41.0
-grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("31_qmoov")
-theme_override_font_sizes/font_size = 16
-text = "QUIT"
-
-[node name="RetryButton" type="Button" parent="CanvasLayers/Pause Menu" unique_id=556870752]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -26.5
-offset_top = -91.0
-offset_right = 26.5
-offset_bottom = -69.0
-grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("31_qmoov")
-theme_override_font_sizes/font_size = 16
-text = "RETRY"
-
-[node name="ContinueButton" type="Button" parent="CanvasLayers/Pause Menu" unique_id=1644896695]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -26.5
-offset_top = -120.0
-offset_right = 26.5
-offset_bottom = -98.0
-grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("31_qmoov")
-theme_override_font_sizes/font_size = 16
-text = "CONTINUE"
-
-[node name="Win Screen" type="CanvasLayer" parent="CanvasLayers" unique_id=1341697784]
-process_mode = 3
-visible = false
-script = ExtResource("33_fw1tk")
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayers/Win Screen" unique_id=666674564]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.16078432, 0.16078432, 0.16078432, 0.6627451)
-
-[node name="Label" type="Label" parent="CanvasLayers/Win Screen" unique_id=1205102850]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -63.0
-offset_top = 103.0
-offset_right = 63.0
-offset_bottom = 131.0
-grow_horizontal = 2
-offset_transform_enabled = true
-theme = ExtResource("31_qmoov")
-theme_override_colors/font_shadow_color = Color(0.91764706, 0.31764707, 0.07058824, 0.7294118)
-text = "You escaped!"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="NextButton" type="Button" parent="CanvasLayers/Win Screen" unique_id=1346013782]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -26.5
-offset_top = -120.0
-offset_right = 26.5
-offset_bottom = -98.0
-grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("31_qmoov")
-theme_override_font_sizes/font_size = 16
-text = "NEXT LEVEL"
+[node name="Death Screen" parent="CanvasLayers" unique_id=892956134 instance=ExtResource("33_rur20")]
 
 [node name="UI" parent="CanvasLayers" unique_id=640032260 instance=ExtResource("34_3buw8")]
 
@@ -6511,16 +6333,3 @@ limit_left = 0
 limit_top = 0
 limit_right = 480
 limit_bottom = 272
-
-[connection signal="mouse_entered" from="CanvasLayers/Death Screen/QuitButton" to="CanvasLayers/Death Screen" method="_on_quit_button_mouse_entered"]
-[connection signal="pressed" from="CanvasLayers/Death Screen/QuitButton" to="CanvasLayers/Death Screen" method="_on_quit_button_pressed"]
-[connection signal="mouse_entered" from="CanvasLayers/Death Screen/RetryButton" to="CanvasLayers/Death Screen" method="_on_retry_button_mouse_entered"]
-[connection signal="pressed" from="CanvasLayers/Death Screen/RetryButton" to="CanvasLayers/Death Screen" method="_on_retry_button_pressed"]
-[connection signal="mouse_entered" from="CanvasLayers/Pause Menu/QuitButton" to="CanvasLayers/Pause Menu" method="_on_quit_button_mouse_entered"]
-[connection signal="pressed" from="CanvasLayers/Pause Menu/QuitButton" to="CanvasLayers/Pause Menu" method="_on_quit_button_pressed"]
-[connection signal="mouse_entered" from="CanvasLayers/Pause Menu/RetryButton" to="CanvasLayers/Pause Menu" method="_on_retry_button_mouse_entered"]
-[connection signal="pressed" from="CanvasLayers/Pause Menu/RetryButton" to="CanvasLayers/Pause Menu" method="_on_retry_button_pressed"]
-[connection signal="mouse_entered" from="CanvasLayers/Pause Menu/ContinueButton" to="CanvasLayers/Pause Menu" method="_on_continue_button_mouse_entered"]
-[connection signal="pressed" from="CanvasLayers/Pause Menu/ContinueButton" to="CanvasLayers/Pause Menu" method="_on_continue_button_pressed"]
-[connection signal="mouse_entered" from="CanvasLayers/Win Screen/NextButton" to="CanvasLayers/Win Screen" method="_on_next_button_mouse_entered"]
-[connection signal="pressed" from="CanvasLayers/Win Screen/NextButton" to="CanvasLayers/Win Screen" method="_on_next_button_pressed"]

@@ -2,32 +2,34 @@
 
 [ext_resource type="Script" uid="uid://df0r4qgbsclmx" path="res://scripts/final_screen.gd" id="1_lhaix"]
 [ext_resource type="Theme" uid="uid://b6608y06wngqx" path="res://assets/fonts/new_theme.tres" id="2_bbqai"]
+[ext_resource type="Theme" uid="uid://tvt58xafhyma" path="res://buttons.tres" id="3_bbqai"]
 
 [node name="Final Win Screen" type="CanvasLayer" unique_id=1660364760]
 process_mode = 3
 script = ExtResource("1_lhaix")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=336189425]
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=369320147]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.16078432, 0.16078432, 0.16078432, 0.6627451)
+color = Color(0, 0, 0, 0.3372549)
 
-[node name="Label" type="Label" parent="." unique_id=1366767435]
+[node name="Label" type="RichTextLabel" parent="." unique_id=1785106523]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -63.0
-offset_top = 103.0
-offset_right = 63.0
-offset_bottom = 131.0
+offset_left = -127.0
+offset_top = 64.0
+offset_right = 127.0
+offset_bottom = 106.0
 grow_horizontal = 2
 offset_transform_enabled = true
 theme = ExtResource("2_bbqai")
 theme_override_colors/font_shadow_color = Color(0.91764706, 0.31764707, 0.07058824, 0.7294118)
-text = "You won!"
+bbcode_enabled = true
+text = "[wave amp=20 freq=5]YOU WIN![/wave]"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -38,12 +40,12 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -55.0
-offset_top = -83.0
+offset_top = -122.0
 offset_right = 55.0
-offset_bottom = -61.0
+offset_bottom = -100.0
 grow_horizontal = 2
 grow_vertical = 0
-theme = ExtResource("2_bbqai")
+theme = ExtResource("3_bbqai")
 theme_override_font_sizes/font_size = 16
 text = "BACK TO MENU"
 
@@ -54,9 +56,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -20.0
-offset_top = 11.0
+offset_top = -15.0
 offset_right = 20.0
-offset_bottom = 34.0
+offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_bbqai")

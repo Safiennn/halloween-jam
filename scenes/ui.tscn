@@ -48,3 +48,12 @@ grow_horizontal = 0
 theme = ExtResource("1_yev5y")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 16
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1559519188]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)

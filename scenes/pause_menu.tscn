@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://bi7id4j7kk51x"]
+
+[ext_resource type="Script" uid="uid://bgraubf16q2oj" path="res://scripts/pause_menu.gd" id="1_myx47"]
+[ext_resource type="Theme" uid="uid://b6608y06wngqx" path="res://assets/fonts/new_theme.tres" id="2_kukqi"]
+[ext_resource type="Theme" uid="uid://tvt58xafhyma" path="res://buttons.tres" id="3_kukqi"]
+
+[node name="Pause Menu" type="CanvasLayer" unique_id=1306519118]
+process_mode = 3
+visible = false
+script = ExtResource("1_myx47")
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1472192482]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.3372549)
+
+[node name="Label" type="RichTextLabel" parent="." unique_id=183801843]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -90.0
+offset_top = 64.0
+offset_right = 98.0
+offset_bottom = 106.0
+grow_horizontal = 2
+offset_transform_enabled = true
+theme = ExtResource("2_kukqi")
+theme_override_colors/font_shadow_color = Color(0.91764706, 0.31764707, 0.07058824, 0.7294118)
+bbcode_enabled = true
+text = "[wave amp=20 freq=5]PAUSED[/wave]
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QuitButton" type="Button" parent="." unique_id=1466702555]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -39.0
+offset_top = -68.0
+offset_right = 39.0
+offset_bottom = -46.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_kukqi")
+theme_override_font_sizes/font_size = 16
+text = "QUIT"
+
+[node name="RetryButton" type="Button" parent="." unique_id=1718992423]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -39.0
+offset_top = -95.0
+offset_right = 39.0
+offset_bottom = -73.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_kukqi")
+theme_override_font_sizes/font_size = 16
+text = "RETRY"
+
+[node name="ContinueButton" type="Button" parent="." unique_id=746169473]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -39.0
+offset_top = -122.0
+offset_right = 39.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_kukqi")
+theme_override_font_sizes/font_size = 16
+text = "CONTINUE"
+
+[connection signal="mouse_entered" from="QuitButton" to="." method="_on_quit_button_mouse_entered"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="mouse_entered" from="RetryButton" to="." method="_on_retry_button_mouse_entered"]
+[connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="mouse_entered" from="ContinueButton" to="." method="_on_continue_button_mouse_entered"]
+[connection signal="pressed" from="ContinueButton" to="." method="_on_continue_button_pressed"]
