@@ -76,6 +76,7 @@ bus = &"SFX"
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1514744967]
 texture_filter = 2
 energy = 0.6
+shadow_enabled = true
 shadow_filter = 1
 texture = SubResource("GradientTexture2D_0rfcp")
 
@@ -84,6 +85,7 @@ one_shot = true
 
 [node name="NoiseLight" type="PointLight2D" parent="." unique_id=1067203684]
 enabled = false
+shadow_enabled = true
 texture = ExtResource("3_5257w")
 
 [node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=700273134]

@@ -6407,6 +6407,7 @@ metadata/_edit_lock_ = true
 [node name="PointLight2D" type="PointLight2D" parent="Lighting/Lamps" unique_id=402440516]
 position = Vector2(40, 25)
 color = Color(0.9072204, 0.7505527, 0.50269324, 1)
+shadow_enabled = true
 texture = ExtResource("26_jdrep")
 texture_scale = 0.25
 script = ExtResource("33_0vrl8")
@@ -6414,6 +6415,7 @@ script = ExtResource("33_0vrl8")
 [node name="PointLight2D7" type="PointLight2D" parent="Lighting/Lamps" unique_id=1913074971]
 position = Vector2(217, 36)
 color = Color(0.9072204, 0.7505527, 0.50269324, 1)
+shadow_enabled = true
 texture = ExtResource("26_jdrep")
 texture_scale = 0.25
 script = ExtResource("33_0vrl8")
@@ -6421,6 +6423,7 @@ script = ExtResource("33_0vrl8")
 [node name="PointLight2D2" type="PointLight2D" parent="Lighting/Lamps" unique_id=1706727731]
 position = Vector2(328, 25)
 color = Color(0.9072204, 0.7505527, 0.50269324, 1)
+shadow_enabled = true
 texture = ExtResource("26_jdrep")
 texture_scale = 0.25
 script = ExtResource("33_0vrl8")
@@ -6428,12 +6431,14 @@ script = ExtResource("33_0vrl8")
 [node name="PointLight2D3" type="PointLight2D" parent="Lighting/Lamps" unique_id=2111658469]
 position = Vector2(312, 104)
 color = Color(0.9072204, 0.7505527, 0.50269324, 1)
+shadow_enabled = true
 texture = ExtResource("26_jdrep")
 texture_scale = 0.25
 
 [node name="PointLight2D4" type="PointLight2D" parent="Lighting/Lamps" unique_id=631362323]
 position = Vector2(-54, 169)
 color = Color(0.9072204, 0.7505527, 0.50269324, 1)
+shadow_enabled = true
 texture = ExtResource("26_jdrep")
 texture_scale = 0.25
 script = ExtResource("33_0vrl8")
@@ -6441,18 +6446,21 @@ script = ExtResource("33_0vrl8")
 [node name="PointLight2D5" type="PointLight2D" parent="Lighting/Lamps" unique_id=631564366]
 position = Vector2(25, 186)
 color = Color(0.9072204, 0.7505527, 0.50269324, 1)
+shadow_enabled = true
 texture = ExtResource("26_jdrep")
 texture_scale = 0.25
 
 [node name="PointLight2D6" type="PointLight2D" parent="Lighting/Lamps" unique_id=1858444183]
 position = Vector2(137, 104)
 color = Color(0.9072204, 0.7505527, 0.50269324, 1)
+shadow_enabled = true
 texture = ExtResource("26_jdrep")
 texture_scale = 0.25
 
 [node name="PointLight2D8" type="PointLight2D" parent="Lighting/Lamps" unique_id=1588015117]
 position = Vector2(457, 122)
 color = Color(0.9072204, 0.7505527, 0.50269324, 1)
+shadow_enabled = true
 texture = ExtResource("26_jdrep")
 texture_scale = 0.25
 script = ExtResource("33_0vrl8")

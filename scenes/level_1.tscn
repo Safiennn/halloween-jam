@@ -6349,6 +6349,7 @@ color = Color(0.446777, 0.44677705, 0.44677693, 1)
 [node name="PointLight2D" type="PointLight2D" parent="Lighting/Lamps" unique_id=402440516]
 position = Vector2(72, 25)
 color = Color(0.95144457, 0.73216957, 0.4081172, 1)
+shadow_enabled = true
 texture = ExtResource("24_x2fux")
 texture_scale = 0.25
 script = ExtResource("32_v8pws")
@@ -6356,18 +6357,21 @@ script = ExtResource("32_v8pws")
 [node name="PointLight2D2" type="PointLight2D" parent="Lighting/Lamps" unique_id=1824875564]
 position = Vector2(216, 25)
 color = Color(0.95144457, 0.73216957, 0.4081172, 1)
+shadow_enabled = true
 texture = ExtResource("24_x2fux")
 texture_scale = 0.25
 
 [node name="PointLight2D3" type="PointLight2D" parent="Lighting/Lamps" unique_id=268662336]
 position = Vector2(360, 25)
 color = Color(0.95144457, 0.73216957, 0.4081172, 1)
+shadow_enabled = true
 texture = ExtResource("24_x2fux")
 texture_scale = 0.25
 
 [node name="PointLight2D4" type="PointLight2D" parent="Lighting/Lamps" unique_id=651126225]
 position = Vector2(456, 25)
 color = Color(0.95144457, 0.73216957, 0.4081172, 1)
+shadow_enabled = true
 texture = ExtResource("24_x2fux")
 texture_scale = 0.25
 script = ExtResource("32_v8pws")
@@ -6375,18 +6379,21 @@ script = ExtResource("32_v8pws")
 [node name="PointLight2D5" type="PointLight2D" parent="Lighting/Lamps" unique_id=482890691]
 position = Vector2(457, 138)
 color = Color(0.95144457, 0.73216957, 0.4081172, 1)
+shadow_enabled = true
 texture = ExtResource("24_x2fux")
 texture_scale = 0.25
 
 [node name="PointLight2D6" type="PointLight2D" parent="Lighting/Lamps" unique_id=2078597458]
 position = Vector2(312, 121)
 color = Color(0.95144457, 0.73216957, 0.4081172, 1)
+shadow_enabled = true
 texture = ExtResource("24_x2fux")
 texture_scale = 0.25
 
 [node name="PointLight2D7" type="PointLight2D" parent="Lighting/Lamps" unique_id=764015835]
 position = Vector2(265, 235)
 color = Color(0.95144457, 0.73216957, 0.4081172, 1)
+shadow_enabled = true
 texture = ExtResource("24_x2fux")
 texture_scale = 0.25
 script = ExtResource("32_v8pws")
@@ -6394,18 +6401,21 @@ script = ExtResource("32_v8pws")
 [node name="PointLight2D8" type="PointLight2D" parent="Lighting/Lamps" unique_id=1049608950]
 position = Vector2(168, 185)
 color = Color(0.95144457, 0.73216957, 0.4081172, 1)
+shadow_enabled = true
 texture = ExtResource("24_x2fux")
 texture_scale = 0.25
 
 [node name="PointLight2D9" type="PointLight2D" parent="Lighting/Lamps" unique_id=416860718]
 position = Vector2(88, 105)
 color = Color(0.95144457, 0.73216957, 0.4081172, 1)
+shadow_enabled = true
 texture = ExtResource("24_x2fux")
 texture_scale = 0.25
 
 [node name="PointLight2D10" type="PointLight2D" parent="Lighting/Lamps" unique_id=945838743]
 position = Vector2(25, 235)
 color = Color(0.95144457, 0.73216957, 0.4081172, 1)
+shadow_enabled = true
 texture = ExtResource("24_x2fux")
 texture_scale = 0.25
 script = ExtResource("32_v8pws")

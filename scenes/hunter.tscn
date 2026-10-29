@@ -71,6 +71,7 @@ texture_filter = 2
 position = Vector2(0, -8)
 color = Color(0.20392157, 1, 0.14509805, 1)
 energy = 0.3
+shadow_enabled = true
 shadow_filter = 1
 texture = SubResource("GradientTexture2D_kr1wx")
 
