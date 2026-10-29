@@ -16,7 +16,8 @@ func _ready() -> void:
 	var bus = AudioServer.get_bus_index("Music")
 	for i in AudioServer.get_bus_effect_count(bus):
 		AudioServer.set_bus_effect_enabled(bus, i, false)
-
+	
+	$HardcoreCheckBox.button_pressed = Run.hardcore
 
 func _on_quit_button_pressed() -> void:
 	Audio.play_click()
@@ -45,3 +46,7 @@ func _on_tutorial_button_mouse_entered() -> void:
 func _on_tutorial_button_pressed() -> void:
 	Audio.play_click()
 	get_tree().change_scene_to_packed(tutorial_level)
+
+
+func _on_hardcore_check_box_toggled(toggled_on: bool) -> void:
+	Run.hardcore = toggled_on

@@ -4,6 +4,7 @@ const SAVE_PATH = "user://save.cfg"
 
 var run_time : float = 0.0
 var is_running : bool = false
+var hardcore : bool = false
 var best_time : float = 0.0
 
 func _ready() -> void:
