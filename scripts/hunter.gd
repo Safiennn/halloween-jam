@@ -75,6 +75,7 @@ func get_scared():
 	speed = 50.0
 	direction *= -1
 	active_marker += direction
+	active_marker = clamp(active_marker, 0, markers.size() - 1)
 	if global_position.distance_to(markers[active_marker].global_position) < 5:
 		active_marker += direction
 		active_marker = clamp(active_marker, 0, markers.size() - 1)
