@@ -10,6 +10,7 @@ func _on_quit_button_pressed() -> void:
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
-func _ready() -> void:
+
+func _on_visibility_changed() -> void:
 	Run.is_running = false
 	$FinalTime.text = "Your final time is: " + "%d:%05.2f" % [ int(Run.run_time / 60) , fmod(Run.run_time, 60) ]

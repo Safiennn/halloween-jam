@@ -64,5 +64,6 @@ grow_vertical = 2
 theme = ExtResource("2_bbqai")
 theme_override_font_sizes/font_size = 16
 
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="mouse_entered" from="QuitButton" to="." method="_on_quit_button_mouse_entered"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

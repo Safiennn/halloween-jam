@@ -2,7 +2,7 @@ extends "res://scripts/death_screen.gd"
 
 
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("pause"):
+	if Input.is_action_just_pressed("pause") and not get_tree().paused:
 		Audio.play_click()
 		get_tree().paused = true
 		show()

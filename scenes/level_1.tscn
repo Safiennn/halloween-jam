@@ -6235,8 +6235,9 @@ tile_set = SubResource("TileSet_iw4em")
 
 [node name="Objects" type="Node2D" parent="." unique_id=1533293668]
 
-[node name="Finish" parent="Objects" unique_id=1692256549 instance=ExtResource("2_e3sih")]
+[node name="Finish" parent="Objects" unique_id=1692256549 node_paths=PackedStringArray("end_screen") instance=ExtResource("2_e3sih")]
 position = Vector2(433, 30)
+end_screen = NodePath("../../CanvasLayers/Win Screen")
 
 [node name="PossessableObjects" type="Node2D" parent="Objects" unique_id=1881689694]
 

@@ -6263,8 +6263,9 @@ tile_set = SubResource("TileSet_iw4em")
 
 [node name="Objects" type="Node2D" parent="." unique_id=1533293668]
 
-[node name="Finish" parent="Objects" unique_id=1692256549 instance=ExtResource("20_kmaj6")]
+[node name="Finish" parent="Objects" unique_id=1692256549 node_paths=PackedStringArray("end_screen") instance=ExtResource("20_kmaj6")]
 position = Vector2(288, 191)
+end_screen = NodePath("../../CanvasLayers/Final Win Screen")
 
 [node name="PossessableObjects" type="Node2D" parent="Objects" unique_id=1881689694]
 
@@ -6476,6 +6477,9 @@ script = ExtResource("33_0vrl8")
 [node name="Win Screen" parent="CanvasLayers" unique_id=1502086316 instance=ExtResource("39_be7ao")]
 
 [node name="UI" parent="CanvasLayers" unique_id=640032260 instance=ExtResource("36_ciptj")]
+
+[node name="Final Win Screen" parent="CanvasLayers" unique_id=1660364760 instance=ExtResource("2_50287")]
+visible = false
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1075896212]
 position = Vector2(240, 135)

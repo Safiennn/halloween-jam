@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 var next_level : PackedScene = preload("res://scenes/level_1.tscn")
+var tutorial_level : PackedScene = preload("res://scenes/tutorial.tscn")
 
 
 func _ready() -> void:
@@ -26,3 +27,12 @@ func _on_quit_button_mouse_entered() -> void:
 
 func _on_start_button_mouse_entered() -> void:
 	Audio.play_click()
+
+
+func _on_tutorial_button_mouse_entered() -> void:
+	Audio.play_click()
+
+
+func _on_tutorial_button_pressed() -> void:
+	Audio.play_click()
+	get_tree().change_scene_to_packed(tutorial_level)
