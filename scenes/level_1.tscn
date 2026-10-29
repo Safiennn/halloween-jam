@@ -6274,6 +6274,7 @@ noise_light_energy = 0.2
 noise_light_color = Color(0.9874539, 0.37118557, 0.19564027, 1)
 noise_light_flicker = true
 flicker_speed = 0.05
+scare_radius = 70.0
 
 [node name="Collectable" parent="Objects" unique_id=1401312027 instance=ExtResource("28_q0ron")]
 position = Vector2(64, 205)
@@ -6294,15 +6295,15 @@ z_index = 100
 position = Vector2(50, 75)
 
 [node name="Hunter" parent="Entities" unique_id=1514925568 node_paths=PackedStringArray("markers") instance=ExtResource("6_7gny6")]
-position = Vector2(157, 152)
+position = Vector2(137, 152)
 markers = [NodePath("../../HunterRoutes/Hunter1/Marker2D3"), NodePath("../../HunterRoutes/Hunter1/Marker2D2"), NodePath("../../HunterRoutes/Hunter1/Marker2D")]
 
 [node name="Hunter2" parent="Entities" unique_id=696540794 node_paths=PackedStringArray("markers") instance=ExtResource("6_7gny6")]
-position = Vector2(189, 147)
-markers = [NodePath("../../HunterRoutes/Hunter2/Marker2D3"), NodePath("../../HunterRoutes/Hunter2/Marker2D"), NodePath("../../HunterRoutes/Hunter2/Marker2D2")]
+position = Vector2(227, 84)
+markers = [NodePath("../../HunterRoutes/Hunter2/Marker2D"), NodePath("../../HunterRoutes/Hunter2/Marker2D2")]
 
 [node name="Hunter3" parent="Entities" unique_id=1154382151 node_paths=PackedStringArray("markers") instance=ExtResource("6_7gny6")]
-position = Vector2(353, 209)
+position = Vector2(331, 209)
 markers = [NodePath("../../HunterRoutes/Hunter3/Marker2D"), NodePath("../../HunterRoutes/Hunter3/Marker2D2"), NodePath("../../HunterRoutes/Hunter3/Marker2D3"), NodePath("../../HunterRoutes/Hunter3/Marker2D4")]
 
 [node name="HunterRoutes" type="Node2D" parent="." unique_id=278516046]
@@ -6325,9 +6326,6 @@ position = Vector2(189, 84)
 
 [node name="Marker2D2" type="Marker2D" parent="HunterRoutes/Hunter2" unique_id=1516112712]
 position = Vector2(257, 84)
-
-[node name="Marker2D3" type="Marker2D" parent="HunterRoutes/Hunter2" unique_id=1897587226]
-position = Vector2(189, 147)
 
 [node name="Hunter3" type="Node2D" parent="HunterRoutes" unique_id=140582174]
 

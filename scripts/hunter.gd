@@ -44,8 +44,9 @@ func _physics_process(_delta: float) -> void:
 		if turn_time > 0:
 			is_waiting = true
 			$WaitTimer.start(turn_time)
-		$Flashlight.show()
-		$Flashlight/DetectionRange.monitoring = true
+		else:
+			$Flashlight.show()
+			$Flashlight/DetectionRange.monitoring = true
 		speed = 20.0
 		
 	# Make the hunter move towards the active marker.
@@ -112,3 +113,5 @@ func _on_scared_timer_timeout() -> void:
 
 func _on_wait_timer_timeout() -> void:
 	is_waiting = false
+	$Flashlight.show()
+	$Flashlight/DetectionRange.monitoring = true

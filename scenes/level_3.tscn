@@ -6260,11 +6260,11 @@ z_index = 100
 position = Vector2(76, 223)
 
 [node name="Hunter" parent="Entities" unique_id=1514925568 node_paths=PackedStringArray("markers") instance=ExtResource("25_ddneo")]
-position = Vector2(223, 85)
+position = Vector2(223, 147)
 markers = [NodePath("../../HunterRoutes/Hunter1/Marker2D"), NodePath("../../HunterRoutes/Hunter1/Marker2D2"), NodePath("../../HunterRoutes/Hunter1/Marker2D3")]
 
 [node name="Hunter2" parent="Entities" unique_id=109809207 node_paths=PackedStringArray("markers") instance=ExtResource("25_ddneo")]
-position = Vector2(446, 85)
+position = Vector2(446, 147)
 markers = [NodePath("../../HunterRoutes/Hunter2/Marker2D"), NodePath("../../HunterRoutes/Hunter2/Marker2D2"), NodePath("../../HunterRoutes/Hunter2/Marker2D3"), NodePath("../../HunterRoutes/Hunter2/Marker2D4"), NodePath("../../HunterRoutes/Hunter2/Marker2D5")]
 
 [node name="HunterRoutes" type="Node2D" parent="." unique_id=278516046]

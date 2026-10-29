@@ -76,6 +76,7 @@ shadow_filter = 1
 texture = SubResource("GradientTexture2D_kr1wx")
 
 [node name="ScaredTimer" type="Timer" parent="." unique_id=1219520599]
+wait_time = 2.0
 one_shot = true
 
 [node name="!" type="Sprite2D" parent="." unique_id=433799019]
