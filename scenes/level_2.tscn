@@ -24,7 +24,6 @@
 [ext_resource type="PackedScene" uid="uid://do0jluss244jf" path="res://scenes/possessable_object.tscn" id="20_kq2c3"]
 [ext_resource type="PackedScene" uid="uid://ckv54jpjdkvim" path="res://scenes/collectable.tscn" id="22_nquw4"]
 [ext_resource type="Texture2D" uid="uid://bt2muaptkxty5" path="res://assets/graphics/washingmachine.png" id="23_7egwj"]
-[ext_resource type="AudioStream" uid="uid://crx4rmi3pekg" path="res://assets/audio/sfx/bretbernhoft-microwave-oven-01-410907.wav" id="25_nquw4"]
 [ext_resource type="PackedScene" uid="uid://dbhm1foiyme4l" path="res://scenes/player.tscn" id="26_8ky4j"]
 [ext_resource type="AudioStream" uid="uid://dihh4wiug25ag" path="res://assets/audio/sfx/feedthestraycats-washing-machine-sound-354187.mp3" id="26_vwjju"]
 [ext_resource type="PackedScene" uid="uid://n75hajcnwuew" path="res://scenes/hunter.tscn" id="27_6jdxa"]
@@ -6110,48 +6109,6 @@ sources/12 = SubResource("TileSetAtlasSource_0bysi")
 sources/13 = SubResource("TileSetAtlasSource_y0ove")
 sources/14 = SubResource("TileSetAtlasSource_awarj")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_s7g0b"]
-atlas = ExtResource("3_vwjju")
-region = Rect2(358, 49, 21, 15)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nossa"]
-atlas = ExtResource("3_vwjju")
-region = Rect2(390, 49, 21, 15)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_3buw8"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s7g0b")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nossa")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nossa")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nossa")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nossa")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nossa")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nossa")
-}],
-"loop": 1,
-"name": &"scare",
-"speed": 1.0
-}]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_nquw4"]
 atlas = ExtResource("23_7egwj")
 region = Rect2(0, 0, 32, 33)
@@ -6215,7 +6172,7 @@ tile_map_data = PackedByteArray("AAAJAAYAAQACAAUAAAAKAAYAAQADAAUAAAA=")
 tile_set = ExtResource("7_rur20")
 
 [node name="Furniture" type="TileMapLayer" parent="TileMaps" unique_id=3365789]
-tile_map_data = PackedByteArray("AAAOAA0AAAAEAAgAAAAOAA4AAAAEAAkAAAAPAA0AAAAFAAgAAAAPAA4AAAAFAAkAAAAJAAIAAAAEAAgAAAAJAAMAAAAEAAkAAAAKAAIAAAAFAAgAAAAKAAMAAAAFAAkAAAAHAAIAAAAKAAgAAAAHAAMAAAAKAAkAAAAIAAIAAAALAAgAAAAIAAMAAAALAAkAAAALAAQAAAAXAA0AAAACAAQAAAAbAAsAAAACAAUAAAAbAAwAAAADAAQAAAAcAAsAAAADAAUAAAAcAAwAAAANAA4AAAAYAA0AAAARAA8AAAAaAA0AAAAWAAcAAwAOAAEAAAAWAAgAAwAOAAIAAAAWAAkAAwAOAAMAAAAXAAcAAwAPAAEAAAAXAAgAAwAPAAIAAAAXAAkAAwAPAAMAAAARAA0AAwAaAAUAAAAGAAgAAwAaAAUAAAACAAIAAwAaAAUAAAAVAAIAAwAaAAUAAAAaAAgAAwAaAAUAAAALAAcABQACAAEAAAAZAAEABQACAAEAAAALAAEABQACAAEAAAABAAcABQACAAEAAAAWAAwABQACAAEAAAATAA0ACgARAAoAAAATAA4ACgARAAsAAAAVAA0ACgARAAoAAAAVAA4ACgARAAsAAAAYAA0ACgARAAoAAAAYAA4ACgARAAsAAAAXAA0ACgATAAoAAAAXAA4ACgATAAsAAAAUAA0ACgATAAoAAAAUAA4ACgATAAsAAAANAAgACgAkAB0AAAANAAkACgAkAB4AAAAOAAgACgAlAB0AAAAOAAkACgAlAB4AAAAEAA8ACgAbAAoAAAAWAAUACgAbAAoAAAAXAAUACgAbAAoAAAAWAAYACgAbAAsAAAAOAAIAAwAOAAUAAAAOAAMAAwAOAAYAAAAPAAIAAwAPAAUAAAAPAAMAAwAPAAYAAAAEAAEAAwAOAAEAAAAEAAIAAwAOAAIAAAAEAAMAAwAOAAMAAAAFAAEAAwAPAAEAAAAFAAIAAwAPAAIAAAAFAAMAAwAPAAMAAAAQAAIACgARAAoAAAAQAAMACgARAAsAAAARAAIACgAVAAoAAAARAAMACgAVAAsAAAAPAAgACgAVAAoAAAAPAAkACgAVAAsAAAAKAA0ACgAVAAoAAAAKAA4ACgAVAAsAAAALAA0ACgAZAAoAAAALAA4ACgAZAAsAAAACAAgACgAXAAoAAAACAAkACgAXAAsAAAAGAAEACgAdAAkAAAAGAAIACgAdAAoAAAAGAAMACgAdAAsAAAAYAAgACgATAAoAAAAYAAkACgATAAsAAAATAAoACgAbAAoAAAAWAA0ADAALAAEAAAAWAA4ADAALAAIAAAA=")
+tile_map_data = PackedByteArray("AAAOAA0AAAAEAAgAAAAOAA4AAAAEAAkAAAAPAA0AAAAFAAgAAAAPAA4AAAAFAAkAAAAHAAIAAAAKAAgAAAAHAAMAAAAKAAkAAAAIAAIAAAALAAgAAAAIAAMAAAALAAkAAAALAAQAAAAXAA0AAAACAAQAAAAbAAsAAAACAAUAAAAbAAwAAAADAAQAAAAcAAsAAAADAAUAAAAcAAwAAAANAA4AAAAYAA0AAAARAA8AAAAaAA0AAAAWAAcAAwAOAAEAAAAWAAgAAwAOAAIAAAAWAAkAAwAOAAMAAAAXAAcAAwAPAAEAAAAXAAgAAwAPAAIAAAAXAAkAAwAPAAMAAAARAA0AAwAaAAUAAAAGAAgAAwAaAAUAAAACAAIAAwAaAAUAAAAVAAIAAwAaAAUAAAAaAAgAAwAaAAUAAAALAAcABQACAAEAAAAZAAEABQACAAEAAAALAAEABQACAAEAAAABAAcABQACAAEAAAAWAAwABQACAAEAAAATAA0ACgARAAoAAAATAA4ACgARAAsAAAAVAA0ACgARAAoAAAAVAA4ACgARAAsAAAAYAA0ACgARAAoAAAAYAA4ACgARAAsAAAAXAA0ACgATAAoAAAAXAA4ACgATAAsAAAAUAA0ACgATAAoAAAAUAA4ACgATAAsAAAANAAgACgAkAB0AAAANAAkACgAkAB4AAAAOAAgACgAlAB0AAAAOAAkACgAlAB4AAAAEAA8ACgAbAAoAAAAWAAUACgAbAAoAAAAXAAUACgAbAAoAAAAWAAYACgAbAAsAAAAEAAEAAwAOAAEAAAAEAAIAAwAOAAIAAAAEAAMAAwAOAAMAAAAFAAEAAwAPAAEAAAAFAAIAAwAPAAIAAAAFAAMAAwAPAAMAAAAQAAIACgARAAoAAAAQAAMACgARAAsAAAARAAIACgAVAAoAAAARAAMACgAVAAsAAAAPAAgACgAVAAoAAAAPAAkACgAVAAsAAAAKAA0ACgAVAAoAAAAKAA4ACgAVAAsAAAALAA0ACgAZAAoAAAALAA4ACgAZAAsAAAACAAgACgAXAAoAAAACAAkACgAXAAsAAAAGAAEACgAdAAkAAAAGAAIACgAdAAoAAAAGAAMACgAdAAsAAAAYAAgACgATAAoAAAAYAAkACgATAAsAAAATAAoACgAbAAoAAAAWAA0ADAALAAEAAAAWAA4ADAALAAIAAAA=")
 tile_set = SubResource("TileSet_iw4em")
 
 [node name="DetailedFurniture" type="TileMapLayer" parent="TileMaps" unique_id=1781537015]
@@ -6237,19 +6194,20 @@ position = Vector2(160, 125)
 
 [node name="PossessableObjects" type="Node2D" parent="Objects" unique_id=1881689694]
 
-[node name="Microwave" parent="Objects/PossessableObjects" unique_id=1236153062 instance=ExtResource("20_kq2c3")]
-z_index = 0
-position = Vector2(304, 57)
-sprite_frames = SubResource("SpriteFrames_3buw8")
-sound_fx = ExtResource("25_nquw4")
-noise_light_energy = 0.2
-noise_light_color = Color(0.9874539, 0.37118557, 0.19564027, 1)
-noise_light_flicker = true
-flicker_speed = 0.05
-
 [node name="WashingMachine" parent="Objects/PossessableObjects" unique_id=516272827 instance=ExtResource("20_kq2c3")]
 z_index = 0
 position = Vector2(97, 143)
+sprite_frames = SubResource("SpriteFrames_365g5")
+sound_fx = ExtResource("26_vwjju")
+noise_light_energy = 0.5
+noise_light_color = Color(0.69803923, 1, 1, 1)
+noise_light_flicker = true
+flicker_speed = 0.05
+scare_radius = 75.19
+
+[node name="WashingMachine3" parent="Objects/PossessableObjects" unique_id=982416578 instance=ExtResource("20_kq2c3")]
+z_index = 0
+position = Vector2(240, 48)
 sprite_frames = SubResource("SpriteFrames_365g5")
 sound_fx = ExtResource("26_vwjju")
 noise_light_energy = 0.5
@@ -6267,7 +6225,6 @@ noise_light_energy = 0.5
 noise_light_color = Color(0.69803923, 1, 1, 1)
 noise_light_flicker = true
 flicker_speed = 0.05
-scare_radius = 75.0
 
 [node name="Entities" type="Node2D" parent="." unique_id=1910410418]
 

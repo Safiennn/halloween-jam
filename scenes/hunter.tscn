@@ -8,9 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://dcfpa6vsbnfpu" path="res://assets/graphics/!.png" id="6_waq3h"]
 [ext_resource type="AudioStream" uid="uid://b33xgd8k7u45j" path="res://assets/audio/sfx/yell.wav" id="7_lmlo1"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oj040"]
-radius = 6.0
-height = 18.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_mnu1b"]
+radius = 4.0
 
 [sub_resource type="Gradient" id="Gradient_qhqgy"]
 interpolation_mode = 2
@@ -26,12 +25,13 @@ metadata/_snap_enabled = true
 
 [node name="Hunter" type="CharacterBody2D" unique_id=1514925568 groups=["hunter"]]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 0
 script = ExtResource("1_kr1wx")
+speed = 25.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1188999493]
-position = Vector2(0, -8)
-shape = SubResource("CapsuleShape2D_oj040")
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_mnu1b")
 
 [node name="Shadow" type="Sprite2D" parent="." unique_id=958151461]
 modulate = Color(1, 1, 1, 0.95686275)
