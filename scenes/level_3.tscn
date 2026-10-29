@@ -6277,6 +6277,7 @@ noise_light_color = Color(0.69803923, 1, 1, 1)
 noise_light_flicker = true
 flicker_speed = 0.05
 scare_radius = 75.19
+progress_bar_height = -25.0
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Objects/PossessableObjects/TV2" unique_id=878893863]
 occluder = SubResource("OccluderPolygon2D_0vrl8")
@@ -6300,6 +6301,7 @@ noise_light_energy = 0.5
 noise_light_color = Color(0.69803923, 1, 1, 1)
 flicker_speed = 0.05
 scare_radius = 75.19
+progress_bar_height = -28.0
 
 [node name="PC" parent="Objects/PossessableObjects" unique_id=1960895780 instance=ExtResource("21_12f7l")]
 z_index = 0
@@ -6312,6 +6314,7 @@ noise_light_flicker = true
 flicker_min_energy = 0.5
 flicker_speed = 0.05
 scare_radius = 75.19
+progress_bar_height = -33.0
 
 [node name="Piano" parent="Objects/PossessableObjects" unique_id=471489395 instance=ExtResource("21_12f7l")]
 z_index = 0
@@ -6321,6 +6324,7 @@ sound_fx = ExtResource("30_be7ao")
 noise_light_energy = 0.5
 noise_light_color = Color(0.69803923, 1, 1, 1)
 flicker_speed = 0.05
+progress_bar_height = -27.0
 
 [node name="Collectable" parent="Objects" unique_id=1401312027 instance=ExtResource("27_os8re")]
 position = Vector2(49, 97)

@@ -6111,8 +6111,6 @@ sources/12 = SubResource("TileSetAtlasSource_0bysi")
 sources/13 = SubResource("TileSetAtlasSource_y0ove")
 sources/14 = SubResource("TileSetAtlasSource_awarj")
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_nht5g"]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_mmfjm"]
 atlas = ExtResource("22_s7g0b")
 region = Rect2(0, 0, 48, 48)
@@ -6251,9 +6249,7 @@ noise_light_color = Color(0.69803923, 1, 1, 1)
 noise_light_flicker = true
 flicker_speed = 0.05
 scare_radius = 75.19
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Objects/PossessableObjects/TV" unique_id=1371987931]
-occluder = SubResource("OccluderPolygon2D_nht5g")
+progress_bar_height = -25.0
 
 [node name="Piano" parent="Objects/PossessableObjects" unique_id=1052764816 instance=ExtResource("3_2y5yt")]
 z_index = 0
@@ -6263,6 +6259,7 @@ sound_fx = ExtResource("24_hjqri")
 noise_light_energy = 0.5
 noise_light_color = Color(0.69803923, 1, 1, 1)
 flicker_speed = 0.05
+progress_bar_height = -27.0
 
 [node name="Microwave" parent="Objects/PossessableObjects" unique_id=1964687906 instance=ExtResource("3_2y5yt")]
 z_index = 0
@@ -6274,6 +6271,7 @@ noise_light_color = Color(0.9874539, 0.37118557, 0.19564027, 1)
 noise_light_flicker = true
 flicker_speed = 0.05
 scare_radius = 70.0
+progress_bar_height = -15.0
 
 [node name="Collectable" parent="Objects" unique_id=1401312027 instance=ExtResource("28_q0ron")]
 position = Vector2(64, 205)

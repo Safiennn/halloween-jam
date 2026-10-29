@@ -9,6 +9,7 @@ extends Node2D
 @export var flicker_min_energy : float = 0.1
 @export var flicker_speed : float = 0.1
 @export var scare_radius : float = 50.0
+@export var progress_bar_height : float = -20.0
 var flicker_tween : Tween
 var is_possessed : bool = false
 var scare_volume
@@ -19,6 +20,7 @@ var possession_time_left : float = 5.0
 
 
 func _ready() -> void:
+	$ProgressBar.position.y = progress_bar_height
 	$ProgressBar.max_value = possession_time
 	possession_time_left = possession_time
 	scare_volume = $SoundFX.volume_db

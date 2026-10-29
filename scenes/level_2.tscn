@@ -6203,6 +6203,7 @@ noise_light_color = Color(0.69803923, 1, 1, 1)
 noise_light_flicker = true
 flicker_speed = 0.05
 scare_radius = 75.19
+progress_bar_height = -18.0
 
 [node name="WashingMachine3" parent="Objects/PossessableObjects" unique_id=982416578 instance=ExtResource("20_kq2c3")]
 z_index = 0
@@ -6214,6 +6215,7 @@ noise_light_color = Color(0.69803923, 1, 1, 1)
 noise_light_flicker = true
 flicker_speed = 0.05
 scare_radius = 75.19
+progress_bar_height = -18.0
 
 [node name="WashingMachine2" parent="Objects/PossessableObjects" unique_id=618265188 instance=ExtResource("20_kq2c3")]
 z_index = 0
@@ -6224,6 +6226,7 @@ noise_light_energy = 0.5
 noise_light_color = Color(0.69803923, 1, 1, 1)
 noise_light_flicker = true
 flicker_speed = 0.05
+progress_bar_height = -18.0
 
 [node name="Entities" type="Node2D" parent="." unique_id=1910410418]
 

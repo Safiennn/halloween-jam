@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 func _ready() -> void:
+	$ColorRect.show()
 	var tween = create_tween()
 	tween.tween_property($ColorRect, "modulate:a", 0.0, 0.7)
 
