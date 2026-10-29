@@ -96,6 +96,23 @@ theme = ExtResource("3_bqqt6")
 theme_override_font_sizes/font_size = 16
 text = "TUTORIAL"
 
+[node name="Label2" type="Label" parent="." unique_id=1851483292]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="BestTimeLabel" type="Label" parent="." unique_id=1410775361]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -61.0
+offset_top = 241.0
+offset_right = -21.0
+offset_bottom = 264.0
+grow_horizontal = 0
+theme = ExtResource("1_l6cm7")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+
 [connection signal="mouse_entered" from="QuitButton" to="." method="_on_quit_button_mouse_entered"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="mouse_entered" from="StartButton" to="." method="_on_start_button_mouse_entered"]

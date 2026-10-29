@@ -7,6 +7,11 @@ var tutorial_level : PackedScene = preload("res://scenes/tutorial.tscn")
 func _ready() -> void:
 	if OS.has_feature("web"):
 		$QuitButton.hide()
+	
+	if Run.best_time > 0:
+		$BestTimeLabel.text = "Record: " + "%d:%05.2f" % [ int(Run.best_time / 60) , fmod(Run.best_time, 60) ]
+	else:
+		$BestTimeLabel.hide()
 
 
 func _on_quit_button_pressed() -> void:

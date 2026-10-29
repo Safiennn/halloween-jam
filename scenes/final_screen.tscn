@@ -3,6 +3,11 @@
 [ext_resource type="Script" uid="uid://df0r4qgbsclmx" path="res://scripts/final_screen.gd" id="1_lhaix"]
 [ext_resource type="Theme" uid="uid://b6608y06wngqx" path="res://assets/fonts/new_theme.tres" id="2_bbqai"]
 [ext_resource type="Theme" uid="uid://tvt58xafhyma" path="res://buttons.tres" id="3_bbqai"]
+[ext_resource type="FontFile" uid="uid://b35wpwdqxon2f" path="res://assets/fonts/BoldPixels.ttf" id="3_gov4g"]
+
+[sub_resource type="Theme" id="Theme_k56e7"]
+default_font = ExtResource("3_gov4g")
+default_font_size = 16
 
 [node name="Final Win Screen" type="CanvasLayer" unique_id=1660364760]
 process_mode = 3
@@ -30,6 +35,26 @@ theme = ExtResource("2_bbqai")
 theme_override_colors/font_shadow_color = Color(0.91764706, 0.31764707, 0.07058824, 0.7294118)
 bbcode_enabled = true
 text = "[wave amp=20 freq=5]YOU WIN![/wave]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RecordLabel" type="RichTextLabel" parent="." unique_id=1503400270]
+z_index = 2
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -237.0
+offset_top = 114.99999
+offset_right = 17.0
+offset_bottom = 157.0
+grow_horizontal = 2
+rotation = -0.13264503
+offset_transform_enabled = true
+theme = SubResource("Theme_k56e7")
+theme_override_colors/default_color = Color(1, 0.6745098, 0.078431375, 1)
+theme_override_colors/font_shadow_color = Color(0.50974536, 0.33271915, 9.62615e-08, 1)
+bbcode_enabled = true
+text = "[wave amp=20 freq=5]NEW RECORD![/wave]"
 horizontal_alignment = 1
 vertical_alignment = 1
 
