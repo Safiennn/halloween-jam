@@ -39,6 +39,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RecordLabel" type="RichTextLabel" parent="." unique_id=1503400270]
+visible = false
 z_index = 2
 anchors_preset = 5
 anchor_left = 0.5
